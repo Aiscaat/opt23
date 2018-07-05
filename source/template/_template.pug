@@ -1,0 +1,32 @@
+block variables
+include common/_mixin
+
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(content="Blase" name="author")
+		meta(content="" name="description")
+		meta(content="" name="keywords")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" )
+		meta(content="ie=edge" http-equiv="x-ua-compatible")
+		meta(name="format-detection" content="telephone=no")
+
+		link(rel='stylesheet' href='assets/css/style.css')
+		//- link(rel='stylesheet' href='assets/css/foundation.css')
+		//- script(src='assets/js/foundation.js')
+		script(src='assets/js/app.js')
+		//- <!--[if IE]><![endif]-->
+		//- <!--[if lt IE 9]>
+		//- script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+		//- <![endif]-->
+
+	body(class=bodyClass)
+		block header
+			include common/_header.pug
+
+		block content
+
+		block footer
+			include common/_footer.pug
