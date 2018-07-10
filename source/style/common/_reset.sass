@@ -1,28 +1,46 @@
 *
 	box-sizing: border-box
+	-webkit-tap-highlight-color: transparent
 
 a
 	text-decoration: none
 	color: inherit
+	user-select: none
+
+ul, h1, h2, h3, h4, h5, h6, p
+	margin: 0
+	padding: 0
 
 li
 	list-style-type: none
+	word-break: break-word
 
 img
 	width: 100%
 	height: auto
+	user-select: none
 
 svg
-	max-width: 100%
-	max-height: 100%
+	user-select: none
 
 button
 	cursor: pointer
+	border: none
+	outline: none
+	padding: 0
+	user-select: none
+	background-color: transparent
 
 input,
-button,
 textarea
+	border: none
 	outline: none
-
-p
-	margin: 0
+	background: transparent
+	&::-webkit-input-placeholder
+		color: inherit
+	&::-moz-placeholder
+		color: inherit
+	&:-ms-input-placeholder
+		color: inherit
+	&:-moz-placeholder
+		color: inherit

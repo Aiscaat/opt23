@@ -1,2 +1,49 @@
 block header
 	header.header
+		.header__head.container
+			a(href="/").logo
+				img(src="assets/img/logo.png", alt="logo").logo__image
+			.header__head-left
+				-
+					var headerNav = [
+						{href: '', title: 'Услуги'},
+						{href: '', title: 'Акции'},
+						{href: '', title: 'Контакты'}
+					]
+				.header-nav
+					each item in headerNav
+						a(href=item.href).header-nav__link= item.title
+				p.header__phone 8 (861) 
+					b 205-51-32
+		.header__foot.container
+			button.header-catalog__btn
+				.header-catalog__btn-icon
+					span
+				span Каталог
+			.header-search
+				form.header-search__form
+					input.header-search__form-input(type="text" placeholder="Введите название товара или бренд")
+					i.search-icon
+				.header-search__result-box
+					-
+						var searchResult = [
+							'для суши (рапан) 25кг.',
+							'Бальдо "Премиум"  25кг',
+							'Осман "Премиум"  25кг',
+							'1/с 25кг промасленный Щедрая Кубань',
+							'1/с 25кг Агрокомплекс ТУ',
+							'1/с 25кг Бальдо Прикубанский  ГОСТ',
+							'1/с 25кг Брют ТУ',
+							'1/с 25кг Львовский ГОСТ',
+							'1/с 25кг Львовское ТУ'
+						]
+					each item in searchResult
+						a(href="").header-search__result
+							b Рис 
+							= item
+			.header__links
+				a(href="").enter-link Войти
+					+svg-mix('avatar', 'enter-link__icon')
+				a(href="/basket.html").basket-link Корзина
+					+svg-mix('shopping-basket', 'basket-link__icon')
+					i.basket-count 50

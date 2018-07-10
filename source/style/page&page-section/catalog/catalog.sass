@@ -1,0 +1,104 @@
+.catalog
+   &__grid
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      &-aside
+         max-width: 270px
+         width: 100%
+         background-color: $white
+      &-main
+         max-width: 1120px
+         width: 100%
+         & > *
+            background-color: $white
+            margin-bottom: 10px
+   &-filter
+      &__tag
+         display: inline-block
+         margin-left: 20px
+         margin-bottom: 20px
+         background-color: #e1e0e0
+         padding: 5px 8px
+         &-list
+            padding: 30px 32px 10px 12px
+   &-controls
+      padding: 27px 42px
+      display: flex
+      &__item
+         margin-right: 40px
+         user-select: none
+         position: relative
+         &-name
+            font-size: 1.125rem
+            cursor: pointer
+            display: flex
+            align-items: center
+            padding-left: 10px
+            &:not(label):after
+               width: 14px
+               height: 14px
+               margin-left: 10px
+               content: ''
+               display: block
+               background:
+                  repeat: no-repeat
+                  image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KICA8Zz4KICAgIDxwYXRoIGQ9Im0xMjEuMywzNC42Yy0xLjYtMS42LTQuMi0xLjYtNS44LDBsLTUxLDUxLjEtNTEuMS01MS4xYy0xLjYtMS42LTQuMi0xLjYtNS44LDAtMS42LDEuNi0xLjYsNC4yIDAsNS44bDUzLjksNTMuOWMwLjgsMC44IDEuOCwxLjIgMi45LDEuMiAxLDAgMi4xLTAuNCAyLjktMS4ybDUzLjktNTMuOWMxLjctMS42IDEuNy00LjIgMC4xLTUuOHoiIGZpbGw9IiMwMDAwMDAiLz4KICA8L2c+Cjwvc3ZnPgo=)
+                  size: contain
+            &:not(p)
+               position: relative
+               &:after
+                  content: ''
+                  display: block
+                  border: 1px solid $black
+                  border-radius: 3px
+                  background-color: transparent
+                  width: 15px
+                  height: 15px
+                  cursor: pointer
+                  margin-left: 10px
+               &:before
+                  content: ''
+                  display: none
+                  position: absolute
+                  width: 15px
+                  height: 15px
+                  right: 1px
+                  background:
+                     repeat: no-repeat
+                     image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDc4LjM2OSA3OC4zNjkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDc4LjM2OSA3OC4zNjk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNNzguMDQ5LDE5LjAxNUwyOS40NTgsNjcuNjA2Yy0wLjQyOCwwLjQyOC0xLjEyMSwwLjQyOC0xLjU0OCwwTDAuMzIsNDAuMDE1Yy0wLjQyNy0wLjQyNi0wLjQyNy0xLjExOSwwLTEuNTQ3bDYuNzA0LTYuNzA0ICAgYzAuNDI4LTAuNDI3LDEuMTIxLTAuNDI3LDEuNTQ4LDBsMjAuMTEzLDIwLjExMmw0MS4xMTMtNDEuMTEzYzAuNDI5LTAuNDI3LDEuMTItMC40MjcsMS41NDgsMGw2LjcwMyw2LjcwNCAgIEM3OC40NzcsMTcuODk0LDc4LjQ3NywxOC41ODYsNzguMDQ5LDE5LjAxNXoiIGZpbGw9IiMwMDAwMDAiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K)
+         &-group
+            display: flex
+            align-items: center
+            & > input
+               display: none
+               &:checked + label:before
+                  display: block
+      &__select
+         position: absolute
+         min-width: 100%
+         background-color: $white
+         display: none
+         &.-active
+            display: block
+      &__option
+         display: block
+         font-size: 1.125rem
+         margin-top: 10px
+         width: max-content
+         padding: 3px 10px
+   &-listing
+      display: flex
+      flex-wrap: wrap
+      background-color: transparent
+      margin-right: -10px
+      margin-bottom: 0
+      & > .product
+         margin-right: 10px
+         margin-bottom: 10px
+      &__banner
+         width: 100%
+         margin-bottom: 10px
+         position: relative
+         height: auto
+         z-index: 1

@@ -1,4 +1,40 @@
 //- svg mixin
-mixin svgMix(svgClass, name)
-	svg(class=svgClass)
-		use(xlink:href='assets/img/sprite.svg#'+name)
+mixin svg-mix(name, _class)
+	if (_class)
+		svg(class=_class)
+			use(xlink:href='assets/img/sprite.svg#'+name)
+	else
+		svg
+			use(xlink:href='assets/img/sprite.svg#'+name)
+
+mixin breadcrumbs(...items)
+	.breadcrumbs.container
+		each item in items
+			a(href="").breadcrumbs__link= item
+
+
+mixin product(imgSrc, name, price1Int, price1Penni, price2Int, price2Penni)
+	.product
+		img(src=imgSrc, alt="").product__image
+		.product__content
+			.product__content-top
+				span.product__articul Артикул
+				p.product__name= name
+			.product__content-bottom
+				.product__prices
+					.product__price-box
+						.product__price
+							=price1Int
+							span
+								span= price1Penni
+								| ₽
+						p.product__price-per За 1 шт
+					.product__price-box
+						.product__price
+							=price2Int
+							span
+								span= price2Penni
+								| ₽
+						p.product__price-per За 1 упаковку
+
+				a(href="").product__link Подробнее

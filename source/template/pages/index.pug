@@ -1,7 +1,95 @@
 extends ../_template
 
 block variables
-	//- - var bodyClass = 'isHome';
+	- var bodyClass = 'is-home';
 
 block content
-	p gulp is worked
+	.banner
+		img(src="assets/img/banners/banner-home.jpg", alt="").banner__image
+		.banner__content
+			h1.banner__title Крупнейшая оптовая
+				br
+				| база продуктов
+			p.banner__title-sub В южном федеральном округе
+	.manufacture
+		h2.-index cобственное производство
+		.container
+			.manufacture__list
+				each item in [1, 3]
+					.manufacture__item
+						.manufacture__item-photo-box
+							img(src="assets/img/manufacture/"+(item)+".png", alt="").manufacture__item-photo
+						.manufacture__item-photo-box
+							img(src="assets/img/manufacture/"+(item+1)+".png", alt="").manufacture__item-photo
+	.shares
+		h2.-index Акции
+		.container
+			.shares__list
+				-
+					var shares = [
+						{title: 'Томатная паста', desc: 'При покупке одной упаковки томатной пасты «ПАЯ» 400гр/12бан получи одну банку в подарок'},
+						{title: 'Сгущеное молоко', desc: 'При покупке 10 упаковок 1020 гр. сгущённого молока получи одну упаковку в подарок1020 гр. сгущённого молока '},
+						{title: 'Смесь хлопьев', desc: 'При покупке 1 любой упаковки смеси хлопьев «Кубань-Матушка» получи 2 пачки хлопьев в подарок'},
+						{title: 'Мука', desc: 'При покупке 1 любой упаковки муки «Кубань-Матушка»получи 2 муки в подарок'}
+					]
+				each item, key in shares
+					.shares__item
+						.shares__image-box
+							img(src="assets/img/shares/"+(key+1)+".jpg", alt="").shares__image
+						.shares__content
+							strong.shares__content-title= item.title
+							p.shares__content-desc= item.desc
+			a(href="/shares.html").shares__link Смотреть все акции
+	.novelties
+		h2.-index новинки
+		.novelties__wrap
+			.novelties__list
+				-
+					var products = [
+						{src: 'assets/img/products/1.jpg', name: 'Гречневая крупа "Элитная" в/с 800гр/16пач. "Кубань-Матушка"', price: {q: 25, w: 24, e: 421, r: 96}},
+						{src: 'assets/img/products/2.jpg', name: 'Кукурузная крупа № 4 800гр/16пач. "Кубань-Матушка"', price: {q: 21, w: 77, e: 314, r: 45}},
+						{src: 'assets/img/products/3.jpg', name: 'Рис Бурый шелушеный крупа 800гр/16пач. "Кубань-Матушка"', price: {q: 34, w: 17, e: 546, r: 72}},
+						{src: 'assets/img/products/4.jpg', name: 'Чечевица КРАСНАЯ 800гр/16пач. "Кубань-Матушка"', price: {q: 60, w: 49, e: 967, r: 84}},
+						{src: 'assets/img/products/5.jpg', name: 'Горох колотый шлифованный ЗЕЛЕНЫЙ 1/с  800гр/16пач. "Кубань-Матушка"	', price: {q: 21, w: 02, e: 336, r: 32}},
+						{src: 'assets/img/products/6.jpg', name: 'Пример карточки с длинным названием продукции которая непомещается в 3 стоки и бо', price: {q: 1000, w: 73, e: 10000, r: 78}},
+						{src: 'assets/img/products/7.jpg', name: 'Чечевица 8пач./800гр. "Кубань-Матушка"', price: {q: 40, w: '09', e: 320, r: 72}},
+						{src: 'assets/img/products/8.jpg', name: 'Ячневая крупа №3 800гр/16пач. "Кубань-Матушка"', price: {q: 16, w: 73, e: 267, r: 78}}
+					]
+				each item, key in products
+					+product(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
+			button.novelties__control-btn.-prev
+			button.novelties__control-btn.-next
+	.about-company
+		h2.-index о компании
+		.container
+			.about-company__photo-box
+				img(src="assets/img/about-company-index.jpg", alt="").about-company__photo
+			.about-company__info
+				p «Югоптторг-23» - одна из лидирующих компаний на Юге России с 1998 г. 
+				p Основным видом деятельности, которой является фасовка под собственной ТМ «Кубань-Матушка» и  «Золотой Покос» и оптово-розничная продажа бакалейных товаров. 
+				p "Югоптторг-23" награжден дипломом победителя краевого конкурса "Лучшее предприятие оптовой торговли Кубани 2011" в номинации "Продовольственные товары". 
+				p В 2015 году компания награждена дипломом победителя конкурса "Лучшее предприятие оптовой торговли Краснодарского края 2015" в номинации "Лучший поставщик бакалейной продукции". 
+				p В 2016 году "Югоптторг-23" награжден свидетельством «О занесении на доску почета Карасунского внутригородского округа города Краснодара»
+	.advantages
+		h2.-index преимущества
+		.container
+			.advantages__list
+				-
+					var advantages = [
+						{title: 'Широкий выбор продуктов питания ', desc: 'Большой выбор бакалейных и консервированных продуктов ведущих торговых марок.', svg: 'storage'},
+						{title: 'Всегда в наличии весь ассортимент', desc: 'Постоянное наличие на складе полного ассортимента бакалейных товаров от 0,1 кг до 50 кг. ', svg: 'cereals'},
+						{title: 'Гарантия отличного качества продукции', desc: 'К сырью, процессу фасовки и условиям хранения предъявляются высокие требования. ', svg: 'like'},
+						{title: 'ГОСТ Р ИСО 22000-2007 ISO 22000:2005', desc: 'В  компании  внедрена система менеджмента безопасности пищевой продукции.', svg: 'shield'},
+						{title: 'Наличие собственного автопарка', desc: 'Доставка партии любого объема в срок гарантируется наличием собственного автопарка.', svg: 'delivery-truck'},
+						{title: 'Квалифицированный персонал', desc: 'Квалифицированные сотрудники обеспечивают оперативное обслуживание покупателей.', svg: 'group'},
+						{title: 'Система скидок и бонусов', desc: 'В работе мы используем гибкую систему скидок и бонусов. ', svg: 'shopping-bag'},
+						{title: 'Ответственность и порядочность', desc: 'Сотрудничая с нашей компанией можете быть уверены в нашей ответственности и порядочности', svg: 'shield-ok'}
+					]
+				each item in advantages
+					.advantages__item
+						.advantages__item-head
+							.advantages__item-icon
+								+svg-mix(item.svg)
+							p.advantages__item-title= item.title
+						.advantages__item-foot
+							p.advantages__item-desc= item.desc

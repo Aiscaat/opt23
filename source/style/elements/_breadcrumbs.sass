@@ -1,0 +1,11 @@
+.breadcrumbs
+   display: flex
+   margin: 22px 0 10px !important
+   &__link
+      display: flex
+      &:last-child
+         color: #787878
+      &:not(:last-child):after
+         content: '/'
+         display: block
+         margin: 0 3px

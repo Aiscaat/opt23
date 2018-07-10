@@ -1,15 +1,30 @@
 @import './common/_const.sass'
 @import './_header.sass'
 @import './_footer.sass'
+@import './elements/**/*.sass'
+@import './page&page-section/**/*.sass'
 
 .title
 
 h1
-	&.-lg
+	font-size: 64px
+	&.title
+		&.-lg
 h2
-	&.-bg
+	font-size: 40px
+	&.title
+	&.-index
+		margin: 100px auto 50px
+		text-transform: uppercase
+		text-align: center
+	&.-page
+		margin-bottom: 30px
 h3
-	&.-md
+	&.title
+		&.-md
+
+b, strong
+	// ----------------------------------------------
 
 
 html
@@ -21,6 +36,7 @@ html
 
 body
 	position: relative
+	max-width: 1440px
 	min-width: 320px
 	width: 100%
 	min-height: 100vh
@@ -29,3 +45,15 @@ body
 	flex-direction: column
 	line-height: 1
 	margin: 0 auto
+	&:not(.is-home)
+		// background-color: #f9f9f9
+		background-color: darkgray
+
+.container
+	margin: 0 auto
+	padding: 0 20px
+	width: 100%
+	position: relative
+
+main
+	flex: 1

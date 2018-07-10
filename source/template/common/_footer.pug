@@ -1,2 +1,61 @@
 block footer
 	footer.footer
+		.footer-info
+			p.footer-info__name ЮГОПТТОРГ-23
+			p.footer-info__desc Крупнейшая оптовая база продуктов в южном федеральном округе
+		.footer__head
+			.footer-nav__list
+				-
+					var footerNavs = [
+						{
+							title: 'О компании',
+							list: [
+								{href: '#', title: 'О нас'},
+								{href: '#', title: 'Акции'},
+								{href: '#', title: 'Вакансии'},
+								{href: '#', title: 'Контакты'},
+								{href: '#', title: 'Карты'}
+							]
+						},
+						{
+							title: 'Покупателям',
+							list: [
+								{href: '#', title: 'О доставке'},
+								{href: '#', title: 'Услуги'},
+								{href: '#', title: 'Политика конфиденциальности'}
+							]
+						},
+						{
+							title: 'Личный кабинет',
+							list: [
+								{href: '#', title: 'Войти'},
+								{href: '#', title: 'Зарегистрироваться'},
+								{href: '#', title: 'История покупок'},
+								{href: '#', title: 'Мои данные'}
+
+						]}
+					]
+				each item in footerNavs
+					.footer-nav
+						strong.footer-title= item.title
+						.footer-nav__wrap
+							each link in item.list
+								a(href= link.href).footer-nav__link= link.title
+			a(href="").copyright Copyright ©  ООО «ЮГОПТТОРГ-23» 2015 - 2018
+		.footer__foot
+			.footer-social
+				strong.footer-title Социальные сети
+				.footer-social__list
+					-
+						var socialLinks = [
+							{href: '#', svg: 'vk'},
+							{href: '#', svg: 'ok'},
+							{href: '#', svg: 'inst'}
+						]
+					each item in socialLinks
+						a(href= item.href).footer-social__link
+							+svg-mix(item.svg)
+			.developer
+				a(href="http://blaze.su/" target="_blank").developer__link
+					+svg-mix('Blaze', 'developer__logo')
+				span Разработка и продвижение

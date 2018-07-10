@@ -1,0 +1,72 @@
+extends ../_template
+
+block variables
+
+block content
+   +breadcrumbs('Главная', 'Каталог', 'Крупы и бобовые')
+   .catalog__page.container
+      h2.-page Каталог
+      .catalog__grid
+         .catalog__grid-aside
+         .catalog__grid-main
+            ul.catalog-filter__tag-list
+               -
+                  var tags = [
+                     'Гречневая крупа',
+                     'Рисовая крупа',
+                     'Манная крупа',
+                     'Пшеничная крупа',
+                     'Хлопья зерновые, мюсли',
+                     'Кукурузная крупа',
+                     'Овсяная крупа',
+                     'Перловая крупа',
+                     'Пшено крупа',
+                     'Ячневая крупа',
+                     'Зерно для проращивания',
+                     'Крупы фасованные',
+                     'Отруби',
+                     'Крупы в варочных пакетах',
+                     'Горох',
+                     'Фасоль',
+                     'Чечевица, маш, нут, соя'
+                  ]
+               each item in tags
+                  li.catalog-filter__tag= item
+            .catalog-controls
+               .catalog-controls__item
+                  p.catalog-controls__item-name По цене
+                  .catalog-controls__select
+                     a(href="").catalog-controls__option item
+                     a(href="").catalog-controls__option itemitem
+                     a(href="").catalog-controls__option item item item
+                     a(href="").catalog-controls__option itemitem item item
+               .catalog-controls__item
+                  p.catalog-controls__item-name По новизне
+                  .catalog-controls__select
+                     a(href="").catalog-controls__option item item item
+                     a(href="").catalog-controls__option item item item
+               .catalog-controls__item
+                  .catalog-controls__item-group
+                     input(type="checkbox" id="name" name="name" value="")
+                     //- 'for' need === 'id'
+                     label(for="name").catalog-controls__item-name Товары по акциям
+            -
+               var products = [
+                  {src: 'assets/img/products/1.jpg', name: 'Гречневая крупа "Элитная" в/с 800гр/16пач. "Кубань-Матушка"', price: {q: 25, w: 24, e: 421, r: 96}},
+                  {src: 'assets/img/products/2.jpg', name: 'Кукурузная крупа № 4 800гр/16пач. "Кубань-Матушка"', price: {q: 21, w: 77, e: 314, r: 45}},
+                  {src: 'assets/img/products/3.jpg', name: 'Рис Бурый шелушеный крупа 800гр/16пач. "Кубань-Матушка"', price: {q: 34, w: 17, e: 546, r: 72}},
+                  {src: 'assets/img/products/4.jpg', name: 'Чечевица КРАСНАЯ 800гр/16пач. "Кубань-Матушка"', price: {q: 60, w: 49, e: 967, r: 84}},
+                  {src: 'assets/img/products/5.jpg', name: 'Горох колотый шлифованный ЗЕЛЕНЫЙ 1/с  800гр/16пач. "Кубань-Матушка"	', price: {q: 21, w: 02, e: 336, r: 32}},
+                  {src: 'assets/img/products/6.jpg', name: 'Пример карточки с длинным названием продукции которая непомещается в 3 стоки и бо', price: {q: 1000, w: 73, e: 10000, r: 78}},
+                  {src: 'assets/img/products/7.jpg', name: 'Чечевица 8пач./800гр. "Кубань-Матушка"', price: {q: 40, w: '09', e: 320, r: 72}},
+                  {src: 'assets/img/products/8.jpg', name: 'Ячневая крупа №3 800гр/16пач. "Кубань-Матушка"', price: {q: 16, w: 73, e: 267, r: 78}}
+               ]
+            .catalog-listing
+               each item in products
+                  +product(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
+            .catalog-listing__banner
+               img(src="assets/img/listing-banner.jpg", alt="")
+            .catalog-listing
+               each item in products
+                  +product(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
+            button.catalog-listing__btn

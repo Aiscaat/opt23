@@ -1,0 +1,55 @@
+.product
+   max-width: 272px
+   min-width: 272px
+   // box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.08)
+   box-shadow: 0 8px 40px 0 red
+   padding: 20px 18px
+   display: flex
+   flex-direction: column
+   background-color: $white
+   &__image
+      width: auto
+      max-width: 150px
+      height: auto
+      max-height: 200px
+      margin: 0 auto 25px
+      display: block
+   &__articul
+      color: #5b5b5b
+      margin-bottom: 10px
+      font-size: 12px
+      display: block
+      max-width: max-content
+   &__name
+      line-height: 1.63
+      margin-bottom: 15px
+   &__content
+      flex: 1
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+   &__price
+      font-size: 36px
+      display: flex
+      & > span
+         font-size: 18px
+         display: block
+         & > span
+            font-size: 14px
+            display: block
+      &s
+         display: flex
+         justify-content: space-between
+      &-box
+         &:first-child
+            color: #656464
+            opacity: 0.6
+      &-per
+   &__link
+      margin-top: 30px
+      display: flex
+      justify-content: center
+      align-items: center
+      background-color: $yellow
+      height: 52px
+      font-size: 1.125rem
