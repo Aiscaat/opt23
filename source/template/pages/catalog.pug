@@ -8,6 +8,60 @@ block content
       h2.-page Каталог
       .catalog__grid
          .catalog__grid-aside
+            form(action="").filter__list
+               .filter__item
+                  .filter__item-head
+                     p.filter__item-name Цена за упаковку, ₽
+                  .filter__item-body.-input
+                     input(type="text" value='20').filter__input
+                     input(type="text" value='10 000').filter__input
+               .filter__item
+                  .filter__item-head
+                     p.filter__item-name Вес одного изделия, кг
+                  .filter__item-body.-range
+                     .filter__input-group
+                        input(type="text" value='0.5').filter__input
+                        input(type="text" value='5').filter__input
+                     input(type="range").filter__range
+               -
+                  var filters = [
+                     {
+                        name: 'Продукция по Гост, ТУ',
+                        options: ['ГОСТ', 'ТУ'],
+                        col: '-col-2'},
+                     {
+                        name: 'Вид продукта',
+                        options: ['Крупа гречневая', 'Рис', 'Фасоль', 'Пшено', 'Мюсли']
+                     },
+                     {
+                        name: 'Вид упаковки',
+                        options: ['Вид упаковки', 'Картон', 'Пакет']
+                     },
+                     {
+                        name: 'Торговая марка',
+                        options: ['Кубань матушка', 'Золотой Покос', 'Щедрая Кубань', 'Агрокомплекс', 'Санниково', 'Фролово']
+                     },
+                     {
+                        name: 'Страна производитель',
+                        options: ['Россия', 'Армения', 'Беларусь', 'Китай']
+                     }
+                  ]
+               each item, key1 in filters
+                  .filter__item
+                     .filter__item-head
+                        p.filter__item-name= item.name
+                     - var addClass = ''
+                     - if (item.col) addClass = ''+item.col
+                     - else addClass = ''
+                     .filter__item-body.-check(class=addClass)
+                        each option, key2 in item.options
+                           .filter__item-group
+                              input(type="checkbox" name="" id="value"+key1+key2+"" value="").filter__checkbox
+                              //- make for == id, id == value
+                              //- id mast be unique
+                              label(for="value"+key1+key2+"").filter__option= option
+               button.filter__btn.-submit Применить
+               button.filter__btn.-reset Сбросить фильтр
          .catalog__grid-main
             ul.catalog-filter__tag-list
                -
@@ -69,4 +123,37 @@ block content
             .catalog-listing
                each item in products
                   +product(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
-            button.catalog-listing__btn
+            button.more-product-btn
+               span Показать еще
+            +pagination()
+      .catalog__description
+         p.
+            Особенности и преимущества бакалейной группы продуктов перед другими.Основная особенность бакалейных продуктов – возможность хранить их 
+            без холодильника. Однако многое в бакалее все равно долго не лежит. Например, в крупах нередко заводится пищевая моль и другие мелкие 
+            насекомые-паразиты.
+         p.
+            Еще одна особенность бакалеи – ее нужно хранить подальше от влаги. Влага накапливается в открытых продуктах, от этого они быстро портятся. 
+            Это же касается добавления сыпучих продуктов в емкости – нужно следить, чтобы внутри баночки были сухими.
+   .quick-view__wrap
+      .quick-view
+         h2.quick-view__name Гречневая крупа "Элитная"  1/с  900гр/8пач. "Кубань-Матушка"
+         .quick-view__product
+            .quick-view__photo-box
+               img(src="assets/img/products/1.jpg", alt="").quick-view__photo
+            .quick-view__price-box
+               .product__prices.-quick-view
+                  .product__price-box
+                     .product__price
+                        | 38
+                        span
+                           span 45
+                           | ₽
+                     p.product__price-per За 1 шт
+                  .product__price-box
+                     .product__price
+                        | 380
+                        span
+                           span 45
+                           | ₽
+                     p.product__price-per За 1 упаковку
+               .counter

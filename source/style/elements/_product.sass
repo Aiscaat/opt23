@@ -31,6 +31,7 @@
    &__price
       font-size: 36px
       display: flex
+      align-items: center
       & > span
          font-size: 18px
          display: block
@@ -39,7 +40,18 @@
             display: block
       &s
          display: flex
-         justify-content: space-between
+         &:not(.-quick-view)
+            justify-content: space-between
+         &.-quick-view
+            flex-direction: column
+            & .product__price
+               font-size: 60px
+               & span
+                  font-size: 24px
+               &-box
+                  margin-bottom: 40px
+               &-per
+                  font-size: 24px
       &-box
          &:first-child
             color: #656464

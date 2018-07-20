@@ -6,12 +6,10 @@
       &-aside
          max-width: 270px
          width: 100%
-         background-color: $white
       &-main
          max-width: 1120px
          width: 100%
          & > *
-            background-color: $white
             margin-bottom: 10px
    &-filter
       &__tag
@@ -22,9 +20,11 @@
          padding: 5px 8px
          &-list
             padding: 30px 32px 10px 12px
+            background-color: $white
    &-controls
       padding: 27px 42px
       display: flex
+      background-color: $white
       &__item
          margin-right: 40px
          user-select: none
@@ -90,7 +90,6 @@
    &-listing
       display: flex
       flex-wrap: wrap
-      background-color: transparent
       margin-right: -10px
       margin-bottom: 0
       & > .product
@@ -102,3 +101,33 @@
          position: relative
          height: auto
          z-index: 1
+   &__description
+      max-width: 1286px
+      font-size: 1.125rem
+      line-height: 1.56
+      margin-top: 50px
+      padding: 0 20px
+
+
+
+.more-product-btn
+   padding-left: 60px
+   width: 100%
+   height: 70px
+   font-size: 24px
+   background-color: $white
+   & > span
+      position: relative
+      &:before
+         position: absolute
+         content: ''
+         display: block
+         width: 40px
+         height: 40px
+         top: 50%
+         left: -20px
+         transform: translate(-100%, -50%)
+         background:
+            repeat: no-repeat
+            image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQwMCA0MDA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk5Ljk5NSwwQzg5LjcxNiwwLDAsODkuNzIsMCwyMDBjMCwxMTAuMjc5LDg5LjcxNiwyMDAsMTk5Ljk5NSwyMDBDMzEwLjI3Nyw0MDAsNDAwLDMxMC4yNzksNDAwLDIwMCAgICBDNDAwLDg5LjcyLDMxMC4yNzcsMCwxOTkuOTk1LDB6IE0xOTkuOTk1LDM3My43N0MxMDQuMTgyLDM3My43NywyNi4yMywyOTUuODE2LDI2LjIzLDIwMGMwLTk1LjgxNyw3Ny45NTEtMTczLjc3LDE3My43NjUtMTczLjc3ICAgIGM5NS44MTcsMCwxNzMuNzcyLDc3Ljk1MywxNzMuNzcyLDE3My43N0MzNzMuNzY5LDI5NS44MTYsMjk1LjgxMiwzNzMuNzcsMTk5Ljk5NSwzNzMuNzd6IiBmaWxsPSIjMDAwMDAwIi8+CgkJPHBhdGggZD0iTTI3OS40NzgsMTg2Ljg4NGgtNjYuMzYzVjEyMC41MmMwLTcuMjQzLTUuODcyLTEzLjExNS0xMy4xMTUtMTMuMTE1cy0xMy4xMTUsNS44NzMtMTMuMTE1LDEzLjExNXY2Ni4zNjhoLTY2LjM2MSAgICBjLTcuMjQyLDAtMTMuMTE1LDUuODczLTEzLjExNSwxMy4xMTVjMCw3LjI0Myw1Ljg3MywxMy4xMTUsMTMuMTE1LDEzLjExNWg2Ni4zNTh2NjYuMzYyYzAsNy4yNDIsNS44NzIsMTMuMTE0LDEzLjExNSwxMy4xMTQgICAgYzcuMjQyLDAsMTMuMTE1LTUuODcyLDEzLjExNS0xMy4xMTR2LTY2LjM2NWg2Ni4zNjdjNy4yNDEsMCwxMy4xMTQtNS44NzMsMTMuMTE0LTEzLjExNSAgICBDMjkyLjU5MywxOTIuNzU3LDI4Ni43MiwxODYuODg0LDI3OS40NzgsMTg2Ljg4NHoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K)
+            size: contain

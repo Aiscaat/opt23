@@ -12,6 +12,22 @@ mixin breadcrumbs(...items)
 		each item in items
 			a(href="").breadcrumbs__link= item
 
+mixin pagination()
+	ul.pagination
+		li.-first
+			a(href="") 1
+		li.-prev
+			a(href="")
+		li
+			a(href="") 5
+		li.-active
+			span 7
+		li
+			a(href="") 8
+		li.-next
+			a(href="")
+		li.-last
+			a(href="") 30
 
 mixin product(imgSrc, name, price1Int, price1Penni, price2Int, price2Penni)
 	.product
