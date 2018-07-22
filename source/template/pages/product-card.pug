@@ -1,0 +1,11 @@
+extends ../_template
+
+block variables
+
+block content
+   +breadcrumbs('Главная', 'Каталог', 'Крупы', 'Крупа гречневая', 'Гречневая крупа "Элитная" 1/с  900гр/8пач. "Кубань-Матушка"')
+   .product-card__page
+      .container
+         .product-card
+            +product-info('-card')
+      +slider('Вы смотрели')

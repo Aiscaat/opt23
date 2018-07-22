@@ -60,8 +60,9 @@ block content
                               //- make for == id, id == value
                               //- id mast be unique
                               label(for="value"+key1+key2+"").filter__option= option
-               button.filter__btn.-submit Применить
-               button.filter__btn.-reset Сбросить фильтр
+               .filter__item
+                  button.filter__btn.-submit Применить
+                  button.filter__btn.-reset Сбросить фильтр
          .catalog__grid-main
             ul.catalog-filter__tag-list
                -
@@ -102,7 +103,7 @@ block content
                .catalog-controls__item
                   .catalog-controls__item-group
                      input(type="checkbox" id="name" name="name" value="")
-                     //- 'for' need === 'id'
+                     //- need than 'for' === 'id'
                      label(for="name").catalog-controls__item-name Товары по акциям
             -
                var products = [
@@ -134,26 +135,8 @@ block content
          p.
             Еще одна особенность бакалеи – ее нужно хранить подальше от влаги. Влага накапливается в открытых продуктах, от этого они быстро портятся. 
             Это же касается добавления сыпучих продуктов в емкости – нужно следить, чтобы внутри баночки были сухими.
-   .quick-view__wrap
-      .quick-view
-         h2.quick-view__name Гречневая крупа "Элитная"  1/с  900гр/8пач. "Кубань-Матушка"
-         .quick-view__product
-            .quick-view__photo-box
-               img(src="assets/img/products/1.jpg", alt="").quick-view__photo
-            .quick-view__price-box
-               .product__prices.-quick-view
-                  .product__price-box
-                     .product__price
-                        | 38
-                        span
-                           span 45
-                           | ₽
-                     p.product__price-per За 1 шт
-                  .product__price-box
-                     .product__price
-                        | 380
-                        span
-                           span 45
-                           | ₽
-                     p.product__price-per За 1 упаковку
-               .counter
+   .quick-view
+      .quick-view__wrap
+         +close-btn('-quick-view')
+         .quick-view__wrap-inner
+            +product-info('-view')

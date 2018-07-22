@@ -9,11 +9,16 @@
    background-color: $white
    &__image
       width: auto
-      max-width: 150px
+      max-width: 195px
       height: auto
-      max-height: 200px
-      margin: 0 auto 25px
+      max-height: 100%
+      margin: auto
       display: block
+      &-box
+         width: 100%
+         margin-bottom: 25px
+         display: flex
+         height: 200px
    &__articul
       color: #5b5b5b
       margin-bottom: 10px
@@ -35,6 +40,7 @@
       & > span
          font-size: 18px
          display: block
+         margin-left: 5px
          & > span
             font-size: 14px
             display: block
@@ -65,3 +71,14 @@
       background-color: $yellow
       height: 52px
       font-size: 1.125rem
+   &-basket
+      padding: 15px 40px
+      &__image
+         width: auto
+         height: auto
+         max-width: 100%
+         margin: auto
+         &-box
+            min-width: 195px
+            max-width: 195px
+            height: 250px

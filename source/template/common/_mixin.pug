@@ -12,6 +12,9 @@ mixin breadcrumbs(...items)
 		each item in items
 			a(href="").breadcrumbs__link= item
 
+mixin close-btn(cl)
+	button.close(class=cl)
+
 mixin pagination()
 	ul.pagination
 		li.-first
@@ -31,7 +34,8 @@ mixin pagination()
 
 mixin product(imgSrc, name, price1Int, price1Penni, price2Int, price2Penni)
 	.product
-		img(src=imgSrc, alt="").product__image
+		.product__image-box
+			img(src=imgSrc, alt="").product__image
 		.product__content
 			.product__content-top
 				span.product__articul Артикул
@@ -54,3 +58,93 @@ mixin product(imgSrc, name, price1Int, price1Penni, price2Int, price2Penni)
 						p.product__price-per За 1 упаковку
 
 				a(href="").product__link Подробнее
+
+mixin product-basket(imgSrc, name, price1Int, price1Penni, price2Int, price2Penni)
+	.product-basket
+		.product-basket__photo-box
+			img(src=imgSrc, alt="").product-basket__photo
+		.product-basket__content
+			span.product-basket__articul Артикул
+			p.product-basket__name= name
+
+mixin product-info(cl)
+	.product-info(class=cl)
+		h2.product-info__name Гречневая крупа "Элитная"  1/с  900гр/8пач. "Кубань-Матушка"
+		.product-info__head
+			.product-info__photo-box
+				img(src="assets/img/products/1.jpg", alt="").product-info__photo
+			.product-info__price-box
+				.product__prices.-quick-view
+					.product__price-box
+						.product__price
+							| 38
+							span
+								span 45
+								| ₽
+						p.product__price-per За 1 шт
+					.product__price-box
+						.product__price
+							| 380
+							span
+								span 45
+								| ₽
+						p.product__price-per За 1 упаковку
+				.counter
+					button.counter__control.-remove
+					.counter__content 1 Уп
+					button.counter__control.-add
+				span.product-info__counter-info Минимальная партия заказа
+					br
+					| 1 упаковка
+				button.product-info__buy Купить
+		.product-info__feature
+			p.product-info__about О товаре
+			table
+				-
+					var features = [
+						{name: 'Артикул', val: 'КРГР10234324'},
+						{name: 'Кол-во в упаковке', val: '8 пачек'},
+						{name: 'Вес Нетто', val: '900 г.'},
+						{name: 'Вес Брутто', val: '7 кг.'},
+						{name: 'Производитель', val: 'ООО "ЮГОПТТОРГ-23"'},
+						{name: 'Торговая марка', val: '"Кубань Матушка"'},
+						{name: 'Страна', val: 'Россия'},
+						{name: 'Вид упаковки', val: 'Пакет'},
+						{name: 'ГОСТ, ТУ', val: 'ГОСТ 55290-2012'}
+					]
+				tbody
+					each item in features
+						tr
+							td= item.name
+							td= item.val
+		.product-info__desc
+			p.product-info__desc-text О продукте
+			p.
+				Гречневая крупа является одной из самых полезных круп в питании человека. С самой древности славянам
+				было известно о всей пользе этой крупы и считалась продуктом физической силы. 
+				Эти свойства гречке придает большое количество белка и клетчатки. 
+			p.
+				Гречка очень полезна для нормальной работы сердца, способна предотвратить развитие диабета 
+				и поддерживает работу пищеварительного тракта. 
+				В ее составе довольно многих питательных веществ, в том числе антиоксидантов и витаминов.
+
+mixin slider(title)
+	.slider
+		h2.-index= title
+		.slider__wrap
+			.slider__list
+				-
+					var products = [
+						{src: 'assets/img/products/1.jpg', name: 'Гречневая крупа "Элитная" в/с 800гр/16пач. "Кубань-Матушка"', price: {q: 25, w: 24, e: 421, r: 96}},
+						{src: 'assets/img/products/2.jpg', name: 'Кукурузная крупа № 4 800гр/16пач. "Кубань-Матушка"', price: {q: 21, w: 77, e: 314, r: 45}},
+						{src: 'assets/img/products/3.jpg', name: 'Рис Бурый шелушеный крупа 800гр/16пач. "Кубань-Матушка"', price: {q: 34, w: 17, e: 546, r: 72}},
+						{src: 'assets/img/products/4.jpg', name: 'Чечевица КРАСНАЯ 800гр/16пач. "Кубань-Матушка"', price: {q: 60, w: 49, e: 967, r: 84}},
+						{src: 'assets/img/products/5.jpg', name: 'Горох колотый шлифованный ЗЕЛЕНЫЙ 1/с  800гр/16пач. "Кубань-Матушка"	', price: {q: 21, w: 02, e: 336, r: 32}},
+						{src: 'assets/img/products/6.jpg', name: 'Пример карточки с длинным названием продукции которая непомещается в 3 стоки и бо', price: {q: 1000, w: 73, e: 10000, r: 78}},
+						{src: 'assets/img/products/7.jpg', name: 'Чечевица 8пач./800гр. "Кубань-Матушка"', price: {q: 40, w: '09', e: 320, r: 72}},
+						{src: 'assets/img/products/8.jpg', name: 'Ячневая крупа №3 800гр/16пач. "Кубань-Матушка"', price: {q: 16, w: 73, e: 267, r: 78}}
+					]
+				each item, key in products
+					+product(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
+			button.slider__control-btn.-prev
+			button.slider__control-btn.-next

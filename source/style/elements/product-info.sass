@@ -1,0 +1,93 @@
+.product-info
+   &.-card
+      .product-info
+         &__name
+            margin-bottom: 2.5em
+         &__feature
+            max-width: 455px
+            margin-left: 425px
+            margin-bottom: 50px
+            & > table
+               & > tbody
+                  & > tr
+                     & > td
+                        min-width: 50%
+                        max-width: 50%
+         &__desc
+            padding-top: 20px
+            border-top: 2px solid #f9f9f9
+         &__photo
+            &-box
+               max-width: 390px
+         &__price
+            &-box
+               margin-left: 525px
+   &.-view
+      .product-info
+         &__name
+            margin-bottom: 1em
+         &__photo
+            &-box
+               max-width: 530px
+   &__name
+      line-height: 1.25
+   &__head
+      display: flex
+      justify-content: space-between
+   &__feature
+      margin-top: 50px
+      & > table
+         font-size: 1.125rem
+         width: 100%
+         & > tbody
+            & > tr
+               border-bottom: 1px solid #979797
+               display: flex
+               & > td
+                  padding: 15px 0
+                  &:first-child
+                     color: #727272
+                     width: 100%
+                  &:last-child
+                     min-width: 295px
+                     max-width: 295px
+   &__desc
+      margin-top: 50px
+      &-text
+         font-size: 24px
+         margin-bottom: 20px
+      & > p:not(.product-info__desc-text)
+         font-size: 1.125rem
+         line-height: 1.56
+         margin-bottom: 15px
+         &:last-child
+            margin-bottom: 0
+   &__about
+      font-size: 40px
+      margin-bottom: 40px
+   &__photo
+      max-width: 100%
+      width: auto
+      max-height: 100%
+      height: auto
+      margin: auto
+      &-box
+         display: flex
+         width: 100%
+   &__price
+      &-box
+         max-width: 300px
+         width: 100%
+         & > .counter
+            margin: 10px 0
+   &__counter
+      &-info
+         font-size: 16px
+         line-height: 1.63
+         color: #bababa
+   &__buy
+      width: 236px
+      height: 52px
+      background-color: $yellow
+      margin-top: 20px
+      font-size: 18px
