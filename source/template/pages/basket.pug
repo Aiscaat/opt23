@@ -5,4 +5,24 @@ block variables
 block content
    +breadcrumbs('Главная', 'Корзина')
    .basket__page.container
-      h2.title.-bg Корзина
+      h2.-page Корзина
+      -
+         var products = [
+            {src: 'assets/img/products/1.jpg', name: 'Гречневая крупа "Элитная" в/с 800гр/16пач. "Кубань-Матушка"', price: {q: 421, w: 96, e: '14 768', r: 60}},
+            {src: 'assets/img/products/2.jpg', name: 'Кукурузная крупа № 4 800гр/16пач. "Кубань-Матушка"', price: {q: 314, w: 45, e: '18 552', r: 55}},
+            {src: 'assets/img/products/4.jpg', name: 'Чечевица КРАСНАЯ 800гр/16пач. "Кубань-Матушка"', price: {q: 967, w: 84, e: '23 228', r: 16}},
+            {src: 'assets/img/products/5.jpg', name: 'Горох колотый шлифованный ЗЕЛЕНЫЙ 1/с  800гр/16пач. "Кубань-Матушка"	', price: {q: 336, w: 32, e: '15 807', r: '04'}}
+         ]
+      .basket__wrap
+         .basket__list
+            each item, key in products
+               +product-basket(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
+         .basket-statistics
+            .basket-statistics__amount
+               span Итого:
+               +price('214 526', '35')
+            p.basket-statistics__weight Общий вес: 1000 кг.
+            p.basket-statistics__part Минимальная партия заказа 1 упаковка
+            .basket-statistics__controls
+               button.basket-statistics__checkout Оформить заказ
+               button.basket-statistics__clear Очистить корзину

@@ -32,6 +32,19 @@ mixin pagination()
 		li.-last
 			a(href="") 30
 
+mixin counter()
+	.counter
+		button.counter__control.-remove
+		input(type="text" value="1 Уп").counter__content
+		button.counter__control.-add
+
+mixin price(int, penni)
+	.price
+		= int
+		span
+			span= penni
+			| ₽
+
 mixin product(imgSrc, name, price1Int, price1Penni, price2Int, price2Penni)
 	.product
 		.product__image-box
@@ -43,29 +56,42 @@ mixin product(imgSrc, name, price1Int, price1Penni, price2Int, price2Penni)
 			.product__content-bottom
 				.product__prices
 					.product__price-box
-						.product__price
-							=price1Int
-							span
-								span= price1Penni
-								| ₽
+						+price(price1Int, price1Penni)
 						p.product__price-per За 1 шт
 					.product__price-box
 						.product__price
-							=price2Int
-							span
-								span= price2Penni
-								| ₽
+							+price(price2Int, price2Penni)
 						p.product__price-per За 1 упаковку
 
 				a(href="").product__link Подробнее
 
-mixin product-basket(imgSrc, name, price1Int, price1Penni, price2Int, price2Penni)
+mixin product-basket(imgSrc, name, price1Int, price1Penni, price2Int, price2Penni, history)
 	.product-basket
-		.product-basket__photo-box
-			img(src=imgSrc, alt="").product-basket__photo
-		.product-basket__content
-			span.product-basket__articul Артикул
-			p.product-basket__name= name
+		.product-basket__image-box
+			img(src=imgSrc, alt="").product-basket__image
+		- if(!history || history !== true)
+			.product-basket__content
+				span.product-basket__articul Артикул
+				p.product-basket__name= name
+				.product-basket__counter
+					+counter()
+					.product__prices.-basket
+						.product__price-box
+							+price(price1Int, price1Penni)
+							p.product__price-per За 1 упаковку
+			.product-basket__total-price
+				+price(price2Int, price2Penni)
+			+close-btn('-basket')
+		- if(history && history === true)
+			.product-basket__content-wrap
+				.product-basket__content
+					span.product-basket__articul Артикул
+					p.product-basket__name= name
+				.product-basket__total-price
+					+price(price2Int, price2Penni)
+				.product-basket__history-block
+					p Данный товар больше не производится, но вы можете подобрать похожий продукт в нашем каталоге
+				+close-btn('-basket')
 
 mixin product-info(cl)
 	.product-info(class=cl)
@@ -76,23 +102,12 @@ mixin product-info(cl)
 			.product-info__price-box
 				.product__prices.-quick-view
 					.product__price-box
-						.product__price
-							| 38
-							span
-								span 45
-								| ₽
+						+price('38', '45')
 						p.product__price-per За 1 шт
 					.product__price-box
-						.product__price
-							| 380
-							span
-								span 45
-								| ₽
+						+price('380', '45')
 						p.product__price-per За 1 упаковку
-				.counter
-					button.counter__control.-remove
-					.counter__content 1 Уп
-					button.counter__control.-add
+				+counter()
 				span.product-info__counter-info Минимальная партия заказа
 					br
 					| 1 упаковка

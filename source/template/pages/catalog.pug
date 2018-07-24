@@ -56,7 +56,7 @@ block content
                      .filter__item-body.-check(class=addClass)
                         each option, key2 in item.options
                            .filter__item-group
-                              input(type="checkbox" name="" id="value"+key1+key2+"" value="").filter__checkbox
+                              input(type="checkbox" id="value"+key1+key2+"" value="value"+key1+key2+"").filter__checkbox
                               //- make for == id, id == value
                               //- id mast be unique
                               label(for="value"+key1+key2+"").filter__option= option
@@ -102,9 +102,10 @@ block content
                      a(href="").catalog-controls__option item item item
                .catalog-controls__item
                   .catalog-controls__item-group
-                     input(type="checkbox" id="name" name="name" value="")
-                     //- need than 'for' === 'id'
-                     label(for="name").catalog-controls__item-name Товары по акциям
+                     input(type="checkbox" id="qwerty" name="" value="qwerty")
+                     //- make for == id, id == value
+                     //- id mast be unique
+                     label(for="qwerty").catalog-controls__item-name Товары по акциям
             -
                var products = [
                   {src: 'assets/img/products/1.jpg', name: 'Гречневая крупа "Элитная" в/с 800гр/16пач. "Кубань-Матушка"', price: {q: 25, w: 24, e: 421, r: 96}},

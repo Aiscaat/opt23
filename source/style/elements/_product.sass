@@ -13,7 +13,6 @@
       height: auto
       max-height: 100%
       margin: auto
-      display: block
       &-box
          width: 100%
          margin-bottom: 25px
@@ -34,30 +33,26 @@
       flex-direction: column
       justify-content: space-between
    &__price
-      font-size: 36px
-      display: flex
-      align-items: center
-      & > span
-         font-size: 18px
-         display: block
-         margin-left: 5px
-         & > span
-            font-size: 14px
-            display: block
       &s
          display: flex
          &:not(.-quick-view)
             justify-content: space-between
          &.-quick-view
             flex-direction: column
-            & .product__price
+            & .price
                font-size: 60px
                & span
                   font-size: 24px
+            & > .product__price
                &-box
                   margin-bottom: 40px
                &-per
                   font-size: 24px
+         &.-basket
+            & > .product__price
+               &-box
+                  color: $black
+                  opacity: 1
       &-box
          &:first-child
             color: #656464
@@ -72,7 +67,12 @@
       height: 52px
       font-size: 1.125rem
    &-basket
-      padding: 15px 40px
+      padding: 15px 54px 0 40px
+      display: flex
+      align-items: flex-start
+      width: 100%
+      background-color: $white
+      position: relative
       &__image
          width: auto
          height: auto
@@ -82,3 +82,43 @@
             min-width: 195px
             max-width: 195px
             height: 250px
+            display: flex
+            margin-right: 55px
+      &__content
+         max-width: 375px
+         width: 100%
+         padding-left: 5px
+         margin-right: 55px
+         &-wrap
+            display: flex
+            flex-wrap: wrap
+      &__articul
+         font-size: 1.125rem
+         color: #b0b0b0
+         display: block
+      &__name
+         font-size: 1.125rem
+         line-height: 1.56
+         margin-top: 15px
+         display: block
+      &__counter
+         margin-top: 45px
+         margin-left: -5px
+         display: flex
+         & > .counter
+            margin-right: 30px
+      &__total-price
+         margin-top: 32px
+         & > .price
+            font-size: 36px
+            & span
+               font-size: 20px
+      &__history-block
+         width: 100%
+         padding: 20px
+         margin-top: 15px
+         background-color: $form-green
+         color: $white
+         & > p
+            line-height: 1.56
+            font-size: 18px

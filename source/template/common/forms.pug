@@ -1,0 +1,58 @@
+//- Эта страница для представления всех возможных форм на сайте
+.form__bg
+   .form__wrap
+      .form__head
+         a(href="enter").form__tab.-active Вход
+         a(href="reg").form__tab Регистрация
+         button.form__close
+      form.form#enter
+         .form__group
+            input(type="text" placeholder="Введите адрес электронной почты / телефон").form__input
+         .form__group
+            input(type="text" placeholder="Введите пароль").form__input
+         .form__controls
+            button.form__submit Войти
+            a(href="rec-pass").form__reset-pass Забыли пароль ?
+      form.form#rec-pass
+         .form__content
+            p.email-instruction Укажите адрес электронной почты, с которым вы регистрировались ранее, и мы вышлем инструкции по смене пароля.
+            input(type="text" placeholder="Введите адрес электронной почты").form__input
+            .form__controls
+               button.form__submit Выслать
+         .access-rec-pass
+            p Инструкция по смене пароля выслана на почту
+            p exemple@yandex.ru
+      form.form#reg
+         .form__radio-tabs
+            .form__group-radio
+               input(type="radio", name="reg-type" value="fast" id="fast" checked).form__radio
+               label(for="fast").form__radio-for Быстрая регистрация
+            .form__group-radio
+               input(type="radio", name="reg-type" value="lawyer" id="lawyer").form__radio
+               label(for="lawyer").form__radio-for Регистрация юридических лиц
+         .reg-generate-container
+            label(data-reg-type="fast").form__group.-success
+               input(type="text" placeholder="Имя, Фамилия").form__input
+            label(data-reg-type="fast").form__group.-error
+               input(type="text" placeholder="Введите адрес электроной почты").form__input
+            label(data-reg-type="lawyer").form__group
+               input(type="text" placeholder="Название комании ").form__input
+            label(data-reg-type="lawyer").form__group
+               input(type="text" placeholder="ИНН").form__input
+            label(data-reg-type="fast").form__group
+               input(type="text" placeholder="Телефон").form__input
+            label(data-reg-type="fast").form__group.-pass
+               input(type="password" placeholder="Придумайте пароль").form__input
+               button.show-pass
+            label(data-reg-type="fast").form__group.-pass
+               input(type="password" placeholder="Подтвердите пароль").form__input
+               button.show-pass
+         .form__controls
+            button.form__submit Регистрация
+            .form__compliance
+               input(type="checkbox" id="compliance" name="" value="")
+               label(for="compliance").form__group-for
+                  p Подтверждаю свое согласие на обработку и хранение моих персональных данных в соответствии 
+                     br
+                     | с 
+                     a(href="" data-use="compliance") пользовательским соглашением
