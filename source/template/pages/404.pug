@@ -1,0 +1,18 @@
+extends ../_template
+
+block variables
+   - var page = '404'
+
+block content
+   .page-404
+      .logo.-p404
+         p.logo__text
+            span ЮГ
+            | ОПТТОРГ-23
+         img(src="assets/img/logo.png", alt="logo").logo__image
+      b К сожалению страница не найдена, но Вы не волнуйтесть – у нас еще есть что вам показать
+      p.page-404__text 404
+      b Вы можете продолжить покупки или ознакомится с нашим
+         br
+         | ассортиментом вернувшись на главную страницу
+      a(href="/").page-404__back-link Вернутся на главную

@@ -23,16 +23,19 @@ html
 		//- <![endif]-->
 
 	body(class=bodyClass)
-		block header
-			include common/_header.pug
-
-		main
+		if (page === '404')
 			block content
+		else
+			block header
+				include common/_header.pug
 
-		block footer
-			include common/_footer.pug
+			main.main(class= pageClass)
+				block content
+
+			block footer
+				include common/_footer.pug
 
 
-		//- подключать где нужно
-		block forms
-			include common/forms.pug
+			//- подключать где нужно
+			block forms
+				include common/forms.pug

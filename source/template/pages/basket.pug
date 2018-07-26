@@ -1,28 +1,56 @@
 extends ../_template
 
 block variables
-
+   //- - var pageClass = 'basket__page'
 block content
    +breadcrumbs('Главная', 'Корзина')
-   .basket__page.container
-      h2.-page Корзина
-      -
-         var products = [
-            {src: 'assets/img/products/1.jpg', name: 'Гречневая крупа "Элитная" в/с 800гр/16пач. "Кубань-Матушка"', price: {q: 421, w: 96, e: '14 768', r: 60}},
-            {src: 'assets/img/products/2.jpg', name: 'Кукурузная крупа № 4 800гр/16пач. "Кубань-Матушка"', price: {q: 314, w: 45, e: '18 552', r: 55}},
-            {src: 'assets/img/products/4.jpg', name: 'Чечевица КРАСНАЯ 800гр/16пач. "Кубань-Матушка"', price: {q: 967, w: 84, e: '23 228', r: 16}},
-            {src: 'assets/img/products/5.jpg', name: 'Горох колотый шлифованный ЗЕЛЕНЫЙ 1/с  800гр/16пач. "Кубань-Матушка"	', price: {q: 336, w: 32, e: '15 807', r: '04'}}
-         ]
-      .basket__wrap
-         .basket__list
-            each item, key in products
-               +product-basket(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
-         .basket-statistics
-            .basket-statistics__amount
-               span Итого:
-               +price('214 526', '35')
-            p.basket-statistics__weight Общий вес: 1000 кг.
-            p.basket-statistics__part Минимальная партия заказа 1 упаковка
-            .basket-statistics__controls
-               button.basket-statistics__checkout Оформить заказ
-               button.basket-statistics__clear Очистить корзину
+   h2.title.-page Корзина
+   -
+      var products = [
+         {src: 'assets/img/products/1.jpg', name: 'Гречневая крупа "Элитная" в/с 800гр/16пач. "Кубань-Матушка"', price: {q: 421, w: 96, e: '14 768', r: 60}},
+         {src: 'assets/img/products/2.jpg', name: 'Кукурузная крупа № 4 800гр/16пач. "Кубань-Матушка"', price: {q: 314, w: 45, e: '18 552', r: 55}},
+         {src: 'assets/img/products/4.jpg', name: 'Чечевица КРАСНАЯ 800гр/16пач. "Кубань-Матушка"', price: {q: 967, w: 84, e: '23 228', r: 16}},
+         {src: 'assets/img/products/5.jpg', name: 'Горох колотый шлифованный ЗЕЛЕНЫЙ 1/с  800гр/16пач. "Кубань-Матушка"	', price: {q: 336, w: 32, e: '15 807', r: '04'}}
+      ]
+   .basket.container
+      .basket__list
+         each item, key in products
+            +product-basket(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
+      .basket-statistics
+         .basket-statistics__amount
+            span Итого:
+            +price('214 526', '35')
+         p.basket-statistics__weight Общий вес: 1000 кг.
+         p.basket-statistics__part Минимальная партия заказа 1 упаковка
+         .basket-statistics__controls
+            button.basket-statistics__checkout Оформить заказ
+            button.basket-statistics__clear Очистить корзину
+   .order-thx
+      .order-thx__wrap
+         p.order-thx__text Спасибо за заказ!
+         p.order-thx__order Ваш № заказа ХХХХХХХХХ.
+         p.order-thx__desc Спасибо за то, что выбрали нас. Наш менеджер свяжется с Вами для уточнения заказа. Если у Вас возникли какие-либо вопросы или предложения относительно Вашего заказа или нашей работы, можете позвонить или написать нам.
+         table.phones
+            tbody
+               tr
+                  td: p Телефон
+                  td: p 8 (861) 
+                     b 236-08-55
+               tr
+                  td
+                  td: p 8 (861) 
+                     b 260-32-37
+               tr
+                  td
+                  td: p 8 (861) 
+                     b 260-50-47
+               tr
+                  td
+                  td: p 8 (861) 
+                     b 232-18-51
+               tr
+                  td: p E-mail
+                  td: p opt-23@mail.ru
+         p.order-thx__address Ваш заказ вы можете забрать по адресу г. Краснодар ул. Симферопольская 62
+         a(href="/").order-thx__back-link Вернуться на сайт
+         

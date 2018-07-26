@@ -1,6 +1,7 @@
 .about-company
-   & > .container
-      display: flex
+   &.-index
+      & > .container
+         display: flex
    &__photo
       max-width: 100%
       width: auto
@@ -10,8 +11,44 @@
          max-width: 700px
          width: 100%
    &__info
-      margin: auto
-      max-width: 565px
-      & > p
-         margin-bottom: 25px
-         line-height: 1.63
+      &.-index
+         font-size: 1rem
+         margin: auto
+         max-width: 565px
+         & > p
+            margin-bottom: 25px
+            line-height: 1.63
+      &:not(.-index)
+         font-size: 1.125rem
+         background-color: $white
+         padding: 30px 8.571428571428571vw 30px 20px
+         & > p
+            line-height: 1.53
+            margin-bottom: 30px
+         & > b
+            margin-bottom: 30px
+            font-size: 24px
+            display: block
+   &__slider
+      height: 39.285714285714285vw
+      margin-bottom: 10px
+      border: 1px solid red
+      position: relative
+      & > .slider__control-btn
+         top: 50%
+         opacity: 0.55
+         &.-prev
+            transform: translate(-50%, -50%)
+         &.-next
+            transform: translate(50%, -50%)
+      &-wrap
+         display: flex
+         overflow: hidden
+         height: inherit
+      &-container
+         height: inherit
+         display: flex
+      &-item
+         max-width: 1400px
+         width: 100%
+         height: 100%

@@ -1,0 +1,52 @@
+extends ../_template
+
+block variables
+
+block content
+   +breadcrumbs('Главная', 'Контакты')
+   h2.title.-page Контакты
+   .container
+      .contacts__wrap
+         .logo.-contacts
+            p.logo__text
+               span ЮГ
+               | ОПТТОРГ-23
+         .contacts__wrap-inner
+            table.contacts__common
+               tbody
+                  tr
+                     td: p г. Краснодар,
+                  tr
+                     td: p ул. Симферопольская, 62
+                  tr
+                     td: p Пн - Пт  с 8:00 до 17:00
+                  tr
+                     td: p Сб с 8:00 до 16:00
+                  tr
+                     td: p E-mail: opt-23@mail.ru
+            .contacts__logo
+               .logo.-contacts: img(src="assets/img/logo.png", alt="logo").logo__image
+            table.phones
+               tbody
+                  tr
+                     td: p Телефон
+                     td: p 8 (861) 
+                        b 236-08-55
+                  tr
+                     td
+                     td: p 8 (861) 
+                        b 260-32-37
+                  tr
+                     td
+                     td: p 8 (861) 
+                        b 260-50-47
+                  tr
+                     td
+                     td: p 8 (861) 
+                        b 232-18-51
+                  tr
+                     td: p Факс
+                     td: p 8 (861) 
+                        b 232-18-51
+   .map
+      //- iframe(src="https://yandex.ua/map-widget/v1/-/CBuSnVch3A" allowfullscreen="true")

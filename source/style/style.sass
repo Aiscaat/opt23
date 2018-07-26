@@ -13,11 +13,14 @@ h1
 h2
 	font-size: 40px
 	&.title
+		display: inline-block
 	&.-index
 		margin: 100px auto 50px
 		text-transform: uppercase
 		text-align: center
+		width: 100%
 	&.-page
+		padding: 0 20px
 		margin-bottom: 30px
 h3
 	&.title
@@ -50,10 +53,12 @@ body
 		background-color: #f9f9f9
 
 .container
-	margin: 0 auto
-	padding: 0 20px
+	margin-left: auto
+	margin-right: auto
+	padding-left: 20px
+	padding-right: 20px
 	width: 100%
 	position: relative
 
-main
+main.main
 	flex: 1

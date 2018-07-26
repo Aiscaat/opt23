@@ -1,0 +1,25 @@
+extends ../_template
+
+block variables
+
+block content
+   .pass-rec
+      .pass-rec__proccess
+         p.pass-rec__text Восстановление пароля для аккаунта example@yandex.ru
+         form.form#pass-rec
+            label.form__group.-pass
+               span.form__group-name Введите новый пароль
+               input(type="password" value="123456").form__input
+               button.show-pass
+            label.form__group.-pass
+               span.form__group-name Повторите пароль
+               input(type="password" value="123456").form__input
+               button.show-pass
+            .form__controls
+               button.form__submit Изменить пароль
+      .pass-rec__result
+         p.pass-rec__text Восстановление пароля для аккаунта example@yandex.ru
+         p.pass-rec__result-text Пароль успешно изменен
+         .pass-rec__controls
+            a(href="/").pass-rec__back На главную
+            button.pass-rec__enter Войти в аккаунт

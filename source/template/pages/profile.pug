@@ -4,60 +4,78 @@ block variables
 
 block content
    +breadcrumbs('Главная', 'Корзина/Личный кабинет')
-   .profile__page
-      .container
-         h2.-page Личный кабинет
-      .profile__wrap
-         .profile__tab-list
-            a(href="history").profile__tab.-active История покупок
-            a(href="profile").profile__tab Личные данные
-         .history.container
-            .history__list
-               -
-                  var historyItems = [
-                     {order: 342344053, date: '15.05.2018', price: {int: '214 526', penny: 55}},
-                     {order: 234392374, date: '17.03.2018', price: {int: '48 613', penny: 34}},
-                     {order: 314394586, date: '01.12.2017', price: {int: '100 490', penny: 55}},
-                     {order: 29342556, date: '20.09.2017', price: {int: '1 243 834', penny: 55}}
-                  ]
-               each item, key in historyItems
-                  .history__item
-                     .history__item-head
-                        .history__item-col
-                           .history__item-order
-                              p Заказ №
-                                 br
-                                 = item.order
-                        .history__item-col
-                           p.history__item-date= item.date
-                        .history__item-col
-                           p.history__item-amount-text на сумму
-                        .history__item-col
-                           .history__item-amount
-                              +price(item.price.int, item.price.penny)
-                        .history__item-col
-                           button.history__item-show Показать
-                     -
-                        var products = [
-                           {src: 'assets/img/products/1.jpg', name: 'Гречневая крупа "Элитная" в/с 800гр/16пач. "Кубань-Матушка"', price: {q: 421, w: 96, e: '14 768', r: 60}},
-                           {src: 'assets/img/products/2.jpg', name: 'Кукурузная крупа № 4 800гр/16пач. "Кубань-Матушка"', price: {q: 314, w: 45, e: '18 552', r: 55}},
-                           {src: 'assets/img/products/4.jpg', name: 'Чечевица КРАСНАЯ 800гр/16пач. "Кубань-Матушка"', price: {q: 967, w: 84, e: '23 228', r: 16}},
-                           {src: 'assets/img/products/5.jpg', name: 'Горох колотый шлифованный ЗЕЛЕНЫЙ 1/с  800гр/16пач. "Кубань-Матушка"	', price: {q: 336, w: 32, e: '15 807', r: '04'}}
-                        ]
-                        var cl
-                        key == 0 ? cl = '-active' : cl = ''
-                     .basket__wrap(class=cl)
-                        .basket__list
-                           each item, key2 in products
-                              - if (key2 == products.length - 1)
-                                 +product-basket(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r, true)
-                              - else
-                                 +product-basket(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
-                        .basket-statistics
-                           .basket-statistics__amount
-                              span Итого:
-                              +price('214 526', '35')
-                           p.basket-statistics__weight Общий вес: 1000 кг.
-                           p.basket-statistics__part Для повторной покупки товаров нажмите кнопку «Добавить в корзину»и перейдите в корзину для оформления заказа.
-                           .basket-statistics__controls
-                              button.basket-statistics__checkout Добавть в корзину
+   h2.title.-page Личный кабинет
+   .profile__wrap
+      .profile__tab-list
+         a(href="history").profile__tab.-active История покупок
+         a(href="profile").profile__tab Личные данные
+      .history.container
+         .history__list
+            -
+               var historyItems = [
+                  {order: 342344053, date: '15.05.2018', price: {int: '214 526', penny: 55}},
+                  {order: 234392374, date: '17.03.2018', price: {int: '48 613', penny: 34}},
+                  {order: 314394586, date: '01.12.2017', price: {int: '100 490', penny: 55}},
+                  {order: 29342556, date: '20.09.2017', price: {int: '1 243 834', penny: 55}}
+               ]
+            each item, key in historyItems
+               .history__item
+                  .history__item-head
+                     .history__item-col
+                        .history__item-order
+                           p Заказ №
+                              br
+                              = item.order
+                     .history__item-col
+                        p.history__item-date= item.date
+                     .history__item-col
+                        p.history__item-amount-text на сумму
+                     .history__item-col
+                        .history__item-amount
+                           +price(item.price.int, item.price.penny)
+                     .history__item-col
+                        button.history__item-show Показать
+                  -
+                     var products = [
+                        {src: 'assets/img/products/1.jpg', name: 'Гречневая крупа "Элитная" в/с 800гр/16пач. "Кубань-Матушка"', price: {q: 421, w: 96, e: '14 768', r: 60}},
+                        {src: 'assets/img/products/2.jpg', name: 'Кукурузная крупа № 4 800гр/16пач. "Кубань-Матушка"', price: {q: 314, w: 45, e: '18 552', r: 55}},
+                        {src: 'assets/img/products/4.jpg', name: 'Чечевица КРАСНАЯ 800гр/16пач. "Кубань-Матушка"', price: {q: 967, w: 84, e: '23 228', r: 16}},
+                        {src: 'assets/img/products/5.jpg', name: 'Горох колотый шлифованный ЗЕЛЕНЫЙ 1/с  800гр/16пач. "Кубань-Матушка"	', price: {q: 336, w: 32, e: '15 807', r: '04'}}
+                     ]
+                     var cl
+                     key == 0 ? cl = '-active' : cl = ''
+                  .basket__wrap(class=cl)
+                     .basket__list
+                        each item, key2 in products
+                           - if (key2 == products.length - 1)
+                              +product-basket(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r, true)
+                           - else
+                              +product-basket(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
+                     .basket-statistics
+                        .basket-statistics__amount
+                           span Итого:
+                           +price('214 526', '35')
+                        p.basket-statistics__weight Общий вес: 1000 кг.
+                        p.basket-statistics__part Для повторной покупки товаров нажмите кнопку «Добавить в корзину»и перейдите в корзину для оформления заказа.
+                        .basket-statistics__controls
+                           button.basket-statistics__checkout Добавть в корзину
+      .profile
+         form.form#profile
+            label.form__group
+               input(type="text" value="Иванов Иван").form__input
+            label.form__group
+               input(type="text" value="example@yandex.ru").form__input
+            label.form__group
+               input(type="text" value="ОАО «Магнит»").form__input
+            label.form__group
+               input(type="text" value="ИНН").form__input
+            label.form__group
+               input(type="text" value="Телефон").form__input
+            label.form__group.-pass
+               input(type="password" value="Придумайте пароль").form__input
+               button.show-pass
+            label.form__group.-pass
+               input(type="password" value="Подтвердите пароль").form__input
+               button.show-pass
+            .form__controls
+               button.form__submit Сохранить

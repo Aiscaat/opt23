@@ -2,6 +2,27 @@
    padding-left: 30px
    padding-right: 30px
    font-size: 18px
+   &#profile
+      max-width: 456px
+      width: 100%
+      margin: 0 auto
+      .form
+         &__group
+            margin-top: 30px
+         &__controls
+            justify-content: flex-end
+            margin-top: 50px
+         &__submit
+            width: 236px
+   &#pass-rec
+      max-width: 456px
+      width: 100%
+      margin: 0 auto
+      .form
+         &__controls
+            justify-content: center
+         &__submit
+            padding: 0 25px
    &#enter, &#rec-pass
       padding-top: 17px
       padding-bottom: 38px
@@ -75,9 +96,10 @@
       &-check
       &-container
    &__group
-      height: 48px
-      display: flex
+      display: inline-flex
       margin-top: 40px
+      width: 100%
+      height: 48px
       position: relative
       &.-pass
          margin-top: 40px
@@ -115,6 +137,10 @@
       &-radio
          margin: 10px 0
          font-size: 14px
+      &-name
+         position: absolute
+         top: -5px
+         transform: translateY(-100%)
    &__radio
       display: none
       &-tabs
