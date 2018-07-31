@@ -9,7 +9,7 @@ block content
       .profile__tab-list
          a(href="history").profile__tab.-active История покупок
          a(href="profile").profile__tab Личные данные
-      .history.container
+      .history#history.container
          .history__list
             -
                var historyItems = [
@@ -59,8 +59,8 @@ block content
                         p.basket-statistics__part Для повторной покупки товаров нажмите кнопку «Добавить в корзину»и перейдите в корзину для оформления заказа.
                         .basket-statistics__controls
                            button.basket-statistics__checkout Добавть в корзину
-      .profile
-         form.form#profile
+      .profile#profile
+         form.form#profileData
             label.form__group
                input(type="text" value="Иванов Иван").form__input
             label.form__group

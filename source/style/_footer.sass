@@ -18,15 +18,18 @@
       opacity: 0.4
       display: block
    &-info
-      max-width: 192px
+      max-width: 200px
       &__name
          text-transform: uppercase
          margin-bottom: 9px
          font-size: 26px
+         display: block
       &__desc
          line-height: 1.25
+         & > span
+            opacity: 0.8
    &-nav
-      margin-right: 107px
+      margin-right: 7.43vw
       flex: 1
       &:last-child
          margin-right: 0
@@ -38,7 +41,7 @@
       &__wrap
       &__link
          font-size: 1.125rem
-         margin-top: 13px
+         margin-top: 15px
          display: block
          max-width: max-content
          &:first-child
@@ -56,6 +59,15 @@
          & > svg
             max-width: 100%
             max-width: 100%
+      &:not(.-copy)
+         @include w1366-
+            display: none
+         .footer-social
+      &.-copy
+         margin-top: 50px
+         display: none
+         @include w1366-
+            display: block
 
 .copyright
    display: block

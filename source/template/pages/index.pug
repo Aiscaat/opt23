@@ -39,7 +39,8 @@ block content
 						.shares__item-content
 							strong.shares__item-title= item.title
 							p.shares__item-desc= item.desc
-			a(href="/shares.html").shares__link Смотреть все акции
+			a(href="/shares.html").shares__link 
+				b Смотреть все акции
 	+slider('Новинки')
 	.about-company.-index
 		h2.title.-index о компании
@@ -72,6 +73,6 @@ block content
 						.advantages__item-head
 							.advantages__item-icon
 								+svg-mix(item.svg)
-							p.advantages__item-title= item.title
+							b.advantages__item-title= item.title
 						.advantages__item-foot
 							p.advantages__item-desc= item.desc
