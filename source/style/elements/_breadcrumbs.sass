@@ -1,8 +1,13 @@
 .breadcrumbs
    display: flex
-   margin: 22px 0 !important
+   flex-wrap: wrap
+   margin: 18px 0 !important
+   @include w540-
+      margin: 10px 0 !important
    &__link
       display: flex
+      margin-bottom: 6px
+      line-height: 1.4
       &:last-child
          color: #787878
       &:not(:last-child):after

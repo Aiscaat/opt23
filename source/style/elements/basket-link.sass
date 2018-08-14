@@ -1,14 +1,14 @@
 .basket
    &-link
       position: relative
-      padding-left: 50px
       &__icon
          display: block
-         position: absolute
          width: 30px
          height: 30px
-         top: 0
-         left: 0
+      & > span
+         margin-left: 20px
+         @include w1200-
+            display: none
    &-count
       position: absolute
       top: 6px

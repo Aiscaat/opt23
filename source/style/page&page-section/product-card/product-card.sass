@@ -1,5 +1,11 @@
 .product-card
    background-color: $white
    padding: 50px 30px 30px
+   @include w1024-
+      padding-top: 30px
+   @media all and (max-width: 679px)
+      padding-top: 20px
+   @include w540-
+      padding: 20px
    & > .product-info
    &__page

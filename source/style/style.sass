@@ -12,17 +12,29 @@ h1
 		&.-lg
 h2
 	font-size: 40px
+	@include w540
+		font-size: 36px
+	@media all and (max-width: 480px)
+		font-size: 24px
 	&.title
 		display: inline-block
+		line-height: 1.17
 	&.-index
 		margin: 100px auto 50px
 		text-transform: uppercase
 		text-align: center
 		width: 100%
 		+Helvetica(bold)
+		@include w540-
+			margin: 40px auto 20px
 	&.-page
 		padding: 0 20px
 		margin-bottom: 30px
+		@include w1200-
+			padding-right: 10px
+			padding-left: 10px
+		@include w540-
+			margin-bottom: 20px
 h3
 	&.title
 		&.-md
@@ -38,6 +50,8 @@ html
 	width: 100%
 	height: auto
 	overflow-x: hidden
+	@include w1200-
+		font-size: 14px
 
 
 body
@@ -53,6 +67,9 @@ body
 	margin: 0 auto
 	&:not(.is-home)
 		background-color: #f9f9f9
+	&.is-home
+		@include w540
+			background-color: #f9f9f9
 
 .container
 	margin-left: auto
@@ -64,6 +81,9 @@ body
 	@include w1200-
 		padding-right: 10px
 		padding-left: 10px
+	&.-prod-card
+		@include w540-
+			padding: 0
 
 main.main
 	flex: 1

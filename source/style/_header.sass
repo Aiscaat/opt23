@@ -5,19 +5,38 @@
       align-items: center
       min-height: 80px
       background-color: #fbfbfb
+      @include w540-
+         display: none
       &-left
          display: flex
          align-items: flex-end
    &-nav
-      font-size: 1.125rem
+      font-size: 18px
+      @include w1024-
+         display: none
       &__link
          margin-right: 70px
    &__foot
       padding: 15px 0
       background-color: $green
       position: relative
+      @include w768-
+         padding: 10px 0
       & > .container
          display: flex
+   &__content
+      &-desktop
+         @include w768-
+            display: none !important
+      &-mobile
+         display: none
+         justify-content: space-evenly
+         @include w768-
+            display: flex
+            align-items: center
+         & .logo__image
+            width: 40px
+            height: 40px
    &-catalog
       position: absolute
       top: 100%
@@ -26,6 +45,10 @@
       padding: 40px 10px 0 40px
       width: 100%
       display: none
+      @include w1200-
+         padding-left: 20px
+      @include w1024-
+         padding-left: 10px
       &.-padding
          padding-right: 14.5px
       &__wrap
@@ -39,15 +62,27 @@
          width: 100%
          margin-bottom: 50px
          padding-right: 50px
+         @include w1200-
+            max-width: calc(100% / 3)
+         @include w1024-
+            padding-right: 25px
          &-name
-            font-size: 1.125rem
+            font-size: 18px
             margin-bottom: 20px
             display: block
+            @include w1024-
+               font-size: 16px
          &-list
+            @include w1200-
+               font-size: 16px
+            @include w1024-
+               font-size: 14px
          &-link
             display: block
             line-height: 1.63
             width: max-content
+            @include w1024-
+               line-height: 1.86
       &__btn
          font-size: 22px
          background-color: $yellow
@@ -56,6 +91,8 @@
          height: 50px
          min-width: 218px
          padding-right: 20px
+         @include w1024-
+            min-width: 188px
          &:before
             content: ''
             display: block
@@ -65,6 +102,15 @@
             background:
                repeat: no-repeat
                image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyNCA0MjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNCA0MjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzUsODlDMTUsODksMCw3NCwwLDU0czE1LTM2LDM1LTM2aDM1M2MyMCwwLDM2LDE2LDM2LDM2cy0xNiwzNS0zNiwzNUgzNXoiIGZpbGw9IiMwMDAwMDAiLz4KCQk8cGF0aCBkPSJNMzg4LDE3NmMyMCwwLDM2LDE2LDM2LDM2cy0xNiwzNS0zNiwzNUgzNWMtMjAsMC0zNS0xNS0zNS0zNXMxNS0zNiwzNS0zNkgzODh6IiBmaWxsPSIjMDAwMDAwIi8+CgkJPHBhdGggZD0iTTM4OCwzMzVjMjAsMCwzNiwxNSwzNiwzNXMtMTYsMzYtMzYsMzZIMzVjLTIwLDAtMzUtMTYtMzUtMzZzMTUtMzUsMzUtMzVIMzg4eiIgZmlsbD0iIzAwMDAwMCIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=)
+               size: cover
+         &-alt
+            content: ''
+            display: block
+            width: 22px
+            height: 22px
+            background:
+               repeat: no-repeat
+               image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyMjQgMjI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyMjQgMjI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCI+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTU2Mi4zNikiPgoJPGc+CgkJPGc+CgkJCTxwYXRoIGQ9Ik0xMy4zNSw1OTAuMTY2aDE5Ny4zYzE3LjgsMC41LDE3LjgtMjguMjk5LDAtMjcuNzk5SDEzLjM1Qy00LjQ1LDU2MS44NjYtNC40NSw1OTAuNjY2LDEzLjM1LDU5MC4xNjZ6IiBmaWxsPSIjNGViNjAwIi8+CgkJCTxwYXRoIGQ9Ik0yMTAuNjUsNjYwLjQ2NEgxMy4zNWMtMTcuOC0wLjUtMTcuOCwyOC4yOTksMCwyNy43OTloMTk3LjNDMjI4LjQ1LDY4OC43NjMsMjI4LjQ1LDY1OS45NjQsMjEwLjY1LDY2MC40NjR6IiBmaWxsPSIjNGViNjAwIi8+CgkJCTxwYXRoIGQ9Ik0yMTAuNjUsNzU4LjA2MUgxMy4zNWMtMTcuOCwwLTE3LjgsMjguMjk5LDAsMjguMjk5aDE5Ny4zQzIyOC40NSw3ODYuMzYsMjI4LjQ1LDc1OC4wNjEsMjEwLjY1LDc1OC4wNjF6IiBmaWxsPSIjNGViNjAwIi8+CgkJPC9nPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=)
                size: cover
    &-search
       margin: 0 15px
@@ -80,7 +126,7 @@
             padding-right: 55px
             padding-left: 20px
             color: $header-grey
-            font-size: 1.125rem
+            font-size: 18px
       &__result
          font-size: 0.875rem
          line-height: 2
@@ -100,12 +146,14 @@
       display: flex
       align-items: center
       color: $white
-      font-size: 1.125rem
+      font-size: 18px
       flex: 1
       justify-content: flex-end
       @include w1200-
          min-width: 214px
          justify-content: space-evenly
+      @include w1024-
+         min-width: 150px
       & > a
          margin-left: 4.58vw
          height: 30px
@@ -113,6 +161,3 @@
          align-items: center
          @include w1200-
             margin-left: 0
-         & > span
-            @include w1200-
-               display: none

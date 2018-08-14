@@ -4,18 +4,26 @@
       flex-wrap: wrap
       margin: 0 -5px
       @include w1440-
-         max-width: 1056px
+         max-width: 1326px
          margin: 0 auto
+      @include w1366-
+         max-width: 1056px
       @media all and (max-width: 1075px)
          max-width: 1000px
+      @include w1024-
+         justify-content: space-evenly
    &__item
       max-width: 342px
       width: 100%
       box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.08)
       line-height: 1.63
       margin: 0 5px 10px
+      @include w1440-
+         zoom: 0.94184
       @media all and (max-width: 1075px)
          zoom: 0.947
+      @include w1024-
+         zoom: 1
       &-head
          background-color: $substrate-grey
          display: flex

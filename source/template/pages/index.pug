@@ -25,26 +25,29 @@ block content
 		h2.title.-index Акции
 		.container
 			.shares__list
-				-
-					var shares = [
-						{title: 'Томатная паста', desc: 'При покупке одной упаковки томатной пасты «ПАЯ» 400гр/12бан получи одну банку в подарок'},
-						{title: 'Сгущеное молоко', desc: 'При покупке 10 упаковок 1020 гр. сгущённого молока получи одну упаковку в подарок1020 гр. сгущённого молока '},
-						{title: 'Смесь хлопьев', desc: 'При покупке 1 любой упаковки смеси хлопьев «Кубань-Матушка» получи 2 пачки хлопьев в подарок'},
-						{title: 'Мука', desc: 'При покупке 1 любой упаковки муки «Кубань-Матушка»получи 2 муки в подарок'}
-					]
-				each item, key in shares
-					a(href="").shares__item
-						.shares__item-image-box
-							img(src="assets/img/shares/"+(key+1)+".jpg", alt="").shares__item-image
-						.shares__item-content
-							strong.shares__item-title= item.title
-							p.shares__item-desc= item.desc
+				.shares__list-wrap
+					-
+						var shares = [
+							{title: 'Томатная паста', desc: 'При покупке одной упаковки томатной пасты «ПАЯ» 400гр/12бан получи одну банку в подарок'},
+							{title: 'Сгущеное молоко', desc: 'При покупке 10 упаковок 1020 гр. сгущённого молока получи одну упаковку в подарок1020 гр. сгущённого молока '},
+							{title: 'Смесь хлопьев', desc: 'При покупке 1 любой упаковки смеси хлопьев «Кубань-Матушка» получи 2 пачки хлопьев в подарок'},
+							{title: 'Мука', desc: 'При покупке 1 любой упаковки муки «Кубань-Матушка»получи 2 муки в подарок'}
+						]
+					each item, key in shares
+						a(href="").shares__item
+							.shares__item-image-box
+								img(src="assets/img/shares/"+(key+1)+".jpg", alt="").shares__item-image
+							.shares__item-content
+								strong.shares__item-title= item.title
+								p.shares__item-desc= item.desc
+				//- .content-control
+				//- 	.content-control
 			a(href="/shares.html").shares__link 
 				b Смотреть все акции
 	+slider('Новинки')
 	.about-company.-index
 		h2.title.-index о компании
-		.container
+		.about-company__wrap
 			.about-company__photo-box
 				img(src="assets/img/about-company-index.jpg", alt="").about-company__photo
 			.about-company__info.-index

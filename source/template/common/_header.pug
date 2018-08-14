@@ -19,7 +19,7 @@ block header
 				p.phone 8 (861) 
 					b 205-51-32
 		.header__foot
-			.container
+			.header__content-desktop.container
 				button.header-catalog__btn
 					b Каталог
 				.header-search
@@ -45,12 +45,22 @@ block header
 								= item
 				.header__links
 					a(href="").enter-link
-						span Войти
 						+svg-mix('avatar', 'enter-link__icon')
+						span Войти
 					a(href="/basket.html").basket-link
-						span Корзина
 						+svg-mix('shopping-basket', 'basket-link__icon')
-						i.basket-count 50
+						span Корзина
+						b.basket-count 50
+			.header__content-mobile
+				button.header-catalog__btn-alt
+				a(href="").enter-link
+					+svg-mix('avatar', 'enter-link__icon')
+				a(href="/").logo
+					img(src="assets/img/logo.png", alt="logo").logo__image
+				button.mobile-search__btn
+				a(href="/basket.html").basket-link
+					+svg-mix('shopping-basket', 'basket-link__icon')
+					b.basket-count 50
 			.header-catalog
 				+close-btn('-header-catalog')
 				.header-catalog__wrap

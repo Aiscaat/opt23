@@ -1,12 +1,26 @@
 .product-info
    &.-card
       .product-info
+         &__head
+            @include w1200-
+               flex-wrap: wrap
+            @media all and (max-width: 679px)
+               flex-direction: column
+               align-items: center
          &__name
             margin-bottom: 2.5em
+            @media all and (max-width: 679px)
+               font-size: 24px
+            @include w540-
+               font-size: 20px
+            @media all and (max-width: 411px)
+               font-size: 18px
          &__feature
             max-width: 455px
-            margin-left: 425px
-            margin-bottom: 50px
+            width: 100%
+            @include w1200-
+               max-width: 100%
+               margin-top: 50px
             & > table
                & > tbody
                   & > tr
@@ -19,26 +33,67 @@
          &__photo
             &-box
                max-width: 390px
+               min-width: 390px
+               height: 500px
+               @include w1366-
+                  max-width: 310px
+                  min-width: 310px
+                  height: 400px
+                  margin: auto
+               @include w768
+                  margin: auto 0
+               @media all and (max-width: 679px)
+                  max-height: 400px
+                  height: auto
          &__price
             &-box
-               margin-left: 525px
+               order: 1
+               display: flex
+               flex-direction: column
+               @include w1366
+                  max-width: 236px
+               @include w1200-
+                  margin: auto 0
+                  max-width: 300px
+                  order: unset
+               @include w1024-
+                  max-width: 236px
+               @media all and (max-width: 679px)
+                  margin-top: 50px
+                  max-width: 300px
+                  align-items: center
+         &__buy
+            @media all and (max-width: 679px)
+               width: 100%
    &.-view
       .product-info
+         &__head
+            flex-wrap: wrap
          &__name
             margin-bottom: 1em
+         &__feature
+            margin-top: 50px
+            width: 100%
          &__photo
             &-box
                max-width: 530px
+               @include w1024-
+                  max-width: 310px
+                  min-width: 310px
+                  height: 400px
    &__name
       line-height: 1.25
+      @include w1024
+         font-size: 30px
    &__head
       display: flex
       justify-content: space-between
    &__feature
-      margin-top: 50px
       & > table
          font-size: 1.125rem
          width: 100%
+         @include w540-
+            font-size: 12px
          & > tbody
             & > tr
                border-bottom: 1px solid #979797
@@ -56,15 +111,25 @@
       &-text
          font-size: 24px
          margin-bottom: 20px
+         display: block
       & > p:not(.product-info__desc-text)
          font-size: 1.125rem
          line-height: 1.56
          margin-bottom: 15px
+         @include w540-
+            font-size: 14px
+            line-height: 2.23
          &:last-child
             margin-bottom: 0
    &__about
       font-size: 40px
-      margin-bottom: 40px
+      margin-bottom: 30px
+      @include w768-
+         font-size: 32px
+         margin-bottom: 15px
+      @include w540-
+         font-size: 24px
+         margin-bottom: 5px
    &__photo
       max-width: 100%
       width: auto
@@ -85,6 +150,12 @@
          font-size: 16px
          line-height: 1.63
          color: #bababa
+         display: block
+         width: 100%
+         @media all and (max-width: 679px)
+            text-align: center
+         @include w540-
+            font-size: 14px
    &__buy
       width: 236px
       height: 52px

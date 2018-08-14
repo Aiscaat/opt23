@@ -1,14 +1,21 @@
 .pagination
    display: flex
-   font-size: 1.125rem
+   font-size: 18px
    margin-top: 10px
    justify-content: center
+   @include w1024-
+      margin-top: 20px
+   @media all and (max-width: 479px)
+      font-size: 12px
    & > li
       width: 50px
       height: 50px
       border-radius: 50%
       margin: 0 5px
       display: block
+      @media all and (max-width: 479px)
+         width: 30px
+         height: 30px
       & > *
          justify-content: center
          align-items: center
@@ -25,6 +32,8 @@
             image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDkwLjY1MSA0OTAuNjUxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNjUxIDQ5MC42NTE7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoNi4xMjMyM2UtMTcgMSAtMSA2LjEyMzIzZS0xNyA0OTAuNjUxIC0yLjg0MjE3ZS0xNCkiPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM3MC4yLDIzNy43ODdMMTM1LjUzMywzLjEyYy00LjE2LTQuMTYtMTAuOTIzLTQuMTYtMTUuMDgzLDBjLTQuMTYsNC4xNi00LjE2LDEwLjkyMywwLDE1LjA4M2wyMjcuMTM2LDIyNy4xMTUgICAgTDEyMC40NTEsNDcyLjQ1M2MtNC4xNiw0LjE2LTQuMTYsMTAuOTIzLDAsMTUuMDgzYzIuMDkxLDIuMDY5LDQuODIxLDMuMTE1LDcuNTUyLDMuMTE1czUuNDYxLTEuMDQ1LDcuNTMxLTMuMTE1TDM3MC4yLDI1Mi44NjkgICAgQzM3NC4zNiwyNDguNzA5LDM3NC4zNiwyNDEuOTQ3LDM3MC4yLDIzNy43ODd6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMzNTNCNDAiIGRhdGEtb2xkX2NvbG9yPSIjMzUzYjQwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==)
             size: 25px 25px
             position: center
+         @media all and (max-width: 479px)
+            background-size: 15px 15px
       &.-next
          border: 1px solid #353b40
          transform: rotate(-90deg)
@@ -33,5 +42,7 @@
             image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDkwLjY1MSA0OTAuNjUxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNjUxIDQ5MC42NTE7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoNi4xMjMyM2UtMTcgMSAtMSA2LjEyMzIzZS0xNyA0OTAuNjUxIC0yLjg0MjE3ZS0xNCkiPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM3MC4yLDIzNy43ODdMMTM1LjUzMywzLjEyYy00LjE2LTQuMTYtMTAuOTIzLTQuMTYtMTUuMDgzLDBjLTQuMTYsNC4xNi00LjE2LDEwLjkyMywwLDE1LjA4M2wyMjcuMTM2LDIyNy4xMTUgICAgTDEyMC40NTEsNDcyLjQ1M2MtNC4xNiw0LjE2LTQuMTYsMTAuOTIzLDAsMTUuMDgzYzIuMDkxLDIuMDY5LDQuODIxLDMuMTE1LDcuNTUyLDMuMTE1czUuNDYxLTEuMDQ1LDcuNTMxLTMuMTE1TDM3MC4yLDI1Mi44NjkgICAgQzM3NC4zNiwyNDguNzA5LDM3NC4zNiwyNDEuOTQ3LDM3MC4yLDIzNy43ODd6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMzNTNCNDAiIGRhdGEtb2xkX2NvbG9yPSIjMzUzYjQwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==)
             size: 25px 25px
             position: center
+         @media all and (max-width: 479px)
+            background-size: 15px 15px
       &.-active
          background-color: $yellow

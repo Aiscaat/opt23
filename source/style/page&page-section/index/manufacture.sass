@@ -2,6 +2,8 @@
    &__list
       display: flex
       margin: 0 -5px
+      @include w1024-
+         display: block
    &__item
       max-width: 660px
       width: 100%
@@ -9,6 +11,8 @@
       margin: 0 5px 10px
       box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.08)
       display: flex
+      @include w1024-
+         max-width: 100%
       &-photo
          max-width: 80%
          width: auto
@@ -16,6 +20,9 @@
          height: auto
          margin: auto
          display: block
+         @include w1024-
+            max-width: 90%
+            max-height: 90%
          &-box
             display: flex
             width: 50%

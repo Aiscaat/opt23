@@ -8,8 +8,10 @@ var $ = document,
 window.onload = () => {
    if ($.querySelector('.quick-view__wrap')) device(1);
    if ($.querySelector('.header-catalog')) device(2);
-   if ($.querySelector('.product-card .product-info__feature')) productCart();
+   // if ($.querySelector('.product-card .product-info__feature')) productCart();
    catalogSelect();
+
+   mobileCatalogControls(); // добавить проверку на мобильное расширение
 
    // if ($.querySelector('.modal-form')) modalForm.open();
 };
@@ -44,6 +46,23 @@ var _tabsCommonFunc = (tabs) => {
       }
    });
 };
+
+var _changeDisplayVisible = (el) => {
+   var computedStyle = getComputedStyle(el);
+
+   if (el.style.display && el.style.display === 'block' || computedStyle.display !== 'none')
+      el.style.display = 'none';
+   else
+      el.style.display = 'block';
+
+   window.addEventListener('resize', () => {
+      el.removeAttribute('style');
+   });
+};
+
+var checkMobileContent = () => {
+   if (window.outerWidth < 768) return false;
+};
 /* ————————————————— main functions ————————————————— */
 var device = (n) => {
    var windowWidth = window.innerWidth
@@ -70,9 +89,15 @@ var catalogSelect = () => {
    })
 };
 
-var productCart = () => {
-   var h = $.querySelector('.product-info__head').offsetHeight;
-   $.querySelector('.product-card .product-info__feature').style.marginTop = `-${h-5}px`;
+var mobileCatalogControls = () => {
+   var sortContainer = $.querySelector('.catalog-controls__sort'),
+      filterContainer = $.querySelector('.catalog__grid-aside');      
+
+   $.querySelector('.catalog-controls__sort-btn')
+      .onclick = () => _changeDisplayVisible(sortContainer);
+
+   $.querySelector('.catalog-controls__filter-btn')
+      .onclick = () => _changeDisplayVisible(filterContainer);   
 };
 /* ————————————————— modules functions ————————————————— */
 

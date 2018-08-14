@@ -5,8 +5,52 @@ block variables
 block content
    +breadcrumbs('Главная', 'Каталог', 'Крупы и бобовые')
    h2.title.-page Каталог
-   .container
-      .catalog__grid
+   .container.catalog__grid
+      .catalog__grid-wrap
+         .catalog__grid-head
+            ul.catalog-filter__tag-list
+               -
+                  var tags = [
+                     'Гречневая крупа',
+                     'Рисовая крупа',
+                     'Манная крупа',
+                     'Пшеничная крупа',
+                     'Хлопья зерновые, мюсли',
+                     'Кукурузная крупа',
+                     'Овсяная крупа',
+                     'Перловая крупа',
+                     'Пшено крупа',
+                     'Ячневая крупа',
+                     'Зерно для проращивания',
+                     'Крупы фасованные',
+                     'Отруби',
+                     'Крупы в варочных пакетах',
+                     'Горох',
+                     'Фасоль',
+                     'Чечевица, маш, нут, соя'
+                  ]
+               each item in tags
+                  li.catalog-filter__tag= item
+            .catalog-controls__wrap
+               .catalog-controls
+                  .catalog-controls__item.-down
+                     a(href="").catalog-controls__item-name По цене
+                  .catalog-controls__item.-up
+                     a(href="").catalog-controls__item-name По новизне
+                  .catalog-controls__item
+                     .catalog-controls__item-group
+                        input(type="checkbox" id="qwerty" name="" value="qwerty")
+                        //- make for == id, id == value
+                        //- id mast be unique
+                        label(for="qwerty").catalog-controls__item-name Товары по акциям
+               .catalog-controls.-mobile
+                  .catalog-controls__sort-wrap
+                     button.catalog-controls__sort-btn Сортировать по
+                     .catalog-controls__sort
+                        a(href="").catalog-controls__sort-option По цене ↑
+                        a(href="").catalog-controls__sort-option По цене ↓
+                        a(href="").catalog-controls__sort-option По новизне
+                  button.catalog-controls__filter-btn Фильтр
          .catalog__grid-aside
             form(action="").filter__list
                .filter__item
@@ -64,48 +108,6 @@ block content
                   button.filter__btn.-submit Применить
                   button.filter__btn.-reset Сбросить фильтр
          .catalog__grid-main
-            ul.catalog-filter__tag-list
-               -
-                  var tags = [
-                     'Гречневая крупа',
-                     'Рисовая крупа',
-                     'Манная крупа',
-                     'Пшеничная крупа',
-                     'Хлопья зерновые, мюсли',
-                     'Кукурузная крупа',
-                     'Овсяная крупа',
-                     'Перловая крупа',
-                     'Пшено крупа',
-                     'Ячневая крупа',
-                     'Зерно для проращивания',
-                     'Крупы фасованные',
-                     'Отруби',
-                     'Крупы в варочных пакетах',
-                     'Горох',
-                     'Фасоль',
-                     'Чечевица, маш, нут, соя'
-                  ]
-               each item in tags
-                  li.catalog-filter__tag= item
-            .catalog-controls
-               .catalog-controls__item
-                  p.catalog-controls__item-name По цене
-                  .catalog-controls__select
-                     a(href="").catalog-controls__option item
-                     a(href="").catalog-controls__option itemitem
-                     a(href="").catalog-controls__option item item item
-                     a(href="").catalog-controls__option itemitem item item
-               .catalog-controls__item
-                  p.catalog-controls__item-name По новизне
-                  .catalog-controls__select
-                     a(href="").catalog-controls__option item item item
-                     a(href="").catalog-controls__option item item item
-               .catalog-controls__item
-                  .catalog-controls__item-group
-                     input(type="checkbox" id="qwerty" name="" value="qwerty")
-                     //- make for == id, id == value
-                     //- id mast be unique
-                     label(for="qwerty").catalog-controls__item-name Товары по акциям
             -
                var products = [
                   {src: 'assets/img/products/1.jpg', name: 'Гречневая крупа "Элитная" в/с 800гр/16пач. "Кубань-Матушка"', price: {q: 25, w: 24, e: 421, r: 96}},
@@ -125,12 +127,13 @@ block content
             .catalog-listing
                each item in products
                   +product(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
+         .catalog__grid-foot
             button.more-product-btn
                span Показать еще
             +pagination()
       .catalog__description
          p.
-            Особенности и преимущества бакалейной группы продуктов перед другими.Основная особенность бакалейных продуктов – возможность хранить их 
+            Особенности и преимущества бакалейной группы продуктов перед другими. Основная особенность бакалейных продуктов – возможность хранить их 
             без холодильника. Однако многое в бакалее все равно долго не лежит. Например, в крупах нередко заводится пищевая моль и другие мелкие 
             насекомые-паразиты.
          p.
