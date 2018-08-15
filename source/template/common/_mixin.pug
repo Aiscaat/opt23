@@ -163,3 +163,10 @@ mixin slider(title)
 					+product(item.src, item.name, item.price.q, item.price.w, item.price.e, item.price.r)
 			button.slider__control-btn.-prev
 			button.slider__control-btn.-next
+			+content-control()
+
+mixin content-control()
+	.content-control
+		button.content-control__btn.-prev
+		.content-control__counter
+		button.content-control__btn.-next

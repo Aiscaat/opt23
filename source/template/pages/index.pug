@@ -40,8 +40,7 @@ block content
 							.shares__item-content
 								strong.shares__item-title= item.title
 								p.shares__item-desc= item.desc
-				//- .content-control
-				//- 	.content-control
+				+content-control()
 			a(href="/shares.html").shares__link 
 				b Смотреть все акции
 	+slider('Новинки')
@@ -60,22 +59,24 @@ block content
 		h2.title.-index преимущества
 		.container
 			.advantages__list
-				-
-					var advantages = [
-						{title: 'Широкий выбор продуктов питания ', desc: 'Большой выбор бакалейных и консервированных продуктов ведущих торговых марок.', svg: 'storage'},
-						{title: 'Всегда в наличии весь ассортимент', desc: 'Постоянное наличие на складе полного ассортимента бакалейных товаров от 0,1 кг до 50 кг. ', svg: 'cereals'},
-						{title: 'Гарантия отличного качества продукции', desc: 'К сырью, процессу фасовки и условиям хранения предъявляются высокие требования. ', svg: 'like'},
-						{title: 'ГОСТ Р ИСО 22000-2007 ISO 22000:2005', desc: 'В  компании  внедрена система менеджмента безопасности пищевой продукции.', svg: 'shield'},
-						{title: 'Наличие собственного автопарка', desc: 'Доставка партии любого объема в срок гарантируется наличием собственного автопарка.', svg: 'delivery-truck'},
-						{title: 'Квалифицированный персонал', desc: 'Квалифицированные сотрудники обеспечивают оперативное обслуживание покупателей.', svg: 'group'},
-						{title: 'Система скидок и бонусов', desc: 'В работе мы используем гибкую систему скидок и бонусов. ', svg: 'shopping-bag'},
-						{title: 'Ответственность и порядочность', desc: 'Сотрудничая с нашей компанией можете быть уверены в нашей ответственности и порядочности', svg: 'shield-ok'}
-					]
-				each item in advantages
-					.advantages__item
-						.advantages__item-head
-							.advantages__item-icon
-								+svg-mix(item.svg)
-							b.advantages__item-title= item.title
-						.advantages__item-foot
-							p.advantages__item-desc= item.desc
+				.advantages__list-wrap
+					-
+						var advantages = [
+							{title: 'Широкий выбор продуктов питания ', desc: 'Большой выбор бакалейных и консервированных продуктов ведущих торговых марок.', svg: 'storage'},
+							{title: 'Всегда в наличии весь ассортимент', desc: 'Постоянное наличие на складе полного ассортимента бакалейных товаров от 0,1 кг до 50 кг. ', svg: 'cereals'},
+							{title: 'Гарантия отличного качества продукции', desc: 'К сырью, процессу фасовки и условиям хранения предъявляются высокие требования. ', svg: 'like'},
+							{title: 'ГОСТ Р ИСО 22000-2007 ISO 22000:2005', desc: 'В  компании  внедрена система менеджмента безопасности пищевой продукции.', svg: 'shield'},
+							{title: 'Наличие собственного автопарка', desc: 'Доставка партии любого объема в срок гарантируется наличием собственного автопарка.', svg: 'delivery-truck'},
+							{title: 'Квалифицированный персонал', desc: 'Квалифицированные сотрудники обеспечивают оперативное обслуживание покупателей.', svg: 'group'},
+							{title: 'Система скидок и бонусов', desc: 'В работе мы используем гибкую систему скидок и бонусов. ', svg: 'shopping-bag'},
+							{title: 'Ответственность и порядочность', desc: 'Сотрудничая с нашей компанией можете быть уверены в нашей ответственности и порядочности', svg: 'shield-ok'}
+						]
+					each item in advantages
+						.advantages__item
+							.advantages__item-head
+								.advantages__item-icon
+									+svg-mix(item.svg)
+								b.advantages__item-title= item.title
+							.advantages__item-foot
+								p.advantages__item-desc= item.desc
+				+content-control()

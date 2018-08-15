@@ -1,10 +1,12 @@
 {
-    "name": "M.KOLENDYUK",
-    "version": "1.0.0",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components"
-    ],
-    "dependencies": {}
+  "name": "M.KOLENDYUK",
+  "version": "1.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "swiper": "^4.3.5"
+  }
 }

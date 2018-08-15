@@ -1,10 +1,11 @@
 .shares
    & > .container
-      padding: 0
+      @include w540
+         padding: 0
    &__list
       margin: 0 auto
       @include w1366-
-         max-width: 1030px
+         max-width: 1010px
       @include w768-
          max-width: 495px
       @include w540
@@ -13,8 +14,6 @@
          display: flex
          flex-wrap: wrap
          margin: 0 -10px
-         @include w1366-
-            margin: 0 auto
          @include w1200-
             margin: 0 -3.5px
          @include w540

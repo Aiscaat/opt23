@@ -1,14 +1,53 @@
 .slider
    &__wrap
       position: relative
+      overflow: hidden
+      padding: 20px 10px 38px
+      @include w540
+         padding: 0
    &__list
       display: flex
-      padding: 20px 10px 38px
-      overflow: hidden
       & > .product
          margin-right: 15px
+         @include w1366
+            min-width: 257px
+         @include w1200
+            margin-right: 20px
+            min-width: 280px
+            padding-left: 10px
+            padding-right: 10px
+         @include w1024
+            min-width: 236px
+         @include w540
+            min-width: 100%
+            max-width: 100%
+            width: 100%
+            flex-direction: row
+            box-shadow: none
+            margin-right: 0
+            padding: 25px 20px
          &:last-child
             margin-right: 0
+         & .product
+            &__name
+               @include w1366
+                  font-size: 15px
+               @include w1200-
+                  font-size: 14px
+               @media all and (max-width: 411px)
+                  font-size: 12px
+            &__image
+               &-box
+                  width: 90px
+                  height: 110px
+                  margin-right: 20px
+                  margin-bottom: 0
+            &__link
+               @include w540
+                  display: none
+         & .price
+            @include w1200-
+               font-size: 30px
    &__control
       &-btn
          width: 50px
@@ -16,6 +55,8 @@
          top: 30%
          position: absolute
          overflow: hidden
+         @include w540
+            display: none
          &.-prev
             left: 0
             border-top-right-radius: 50%
