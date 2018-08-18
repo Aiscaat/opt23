@@ -5,24 +5,24 @@
    &__list
       overflow: hidden
       margin: 0 auto
+      @include w1440-
+         max-width: 1316px
+      @include w1366-
+         max-width: 985px
+      @media all and (max-width: 1075px)
+         max-width: 1000px
       @include w540
          max-width: 342px
       &-wrap
          display: flex
          flex-wrap: wrap
          margin: 0 -5px
-         @include w1440-
-            max-width: 1326px
-            margin: 0 auto
-         @include w1366-
-            max-width: 1056px
-         @media all and (max-width: 1075px)
-            max-width: 1000px
          @include w1024-
             justify-content: space-evenly
          @include w540
             flex-wrap: nowrap
             justify-content: flex-start
+            margin: 0
    &__item
       max-width: 342px
       min-width: 342px

@@ -38,10 +38,11 @@
                   font-size: 12px
             &__image
                &-box
-                  width: 90px
-                  height: 110px
-                  margin-right: 20px
-                  margin-bottom: 0
+                  @include w540
+                     width: 90px
+                     height: 110px
+                     margin-right: 20px
+                     margin-bottom: 0
             &__link
                @include w540
                   display: none
