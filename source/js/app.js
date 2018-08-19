@@ -263,3 +263,13 @@ var modalForm = (() => {
       init: init
    }
 })();
+
+var profileModule = (() => {
+   var tabs = [];
+
+   $.querySelectorAll('.profile__tab').forEach(item => {
+      tabs.push(item);
+   });
+   
+   _tabsCommonFunc(tabs);
+})();

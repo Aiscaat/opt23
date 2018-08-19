@@ -7,6 +7,13 @@
    &.container
       @media all and (max-width: 599px)
          padding: 0
+   &__wrap
+      align-items: flex-start
+      @include w1024-
+         flex-wrap: wrap
+         justify-content: flex-end
+      & > .basket-statistics
+         margin-bottom: 2px
    &__list
       max-width: 1016px
       width: 100%
@@ -26,13 +33,16 @@
       @include w1024-
          max-width: 320px
       @media all and (max-width: 479px)
-         margin-top: 20px
+         max-width: none
+         margin: 20px auto 2px auto
          padding: 30px 42px
       & > button
          font-size: 18px
       &__amount
          display: flex
          align-items: flex-end
+         @media all and (max-width: 479px)
+            justify-content: center
          & > span
             font-size: 24px
             margin-bottom: 2px
@@ -40,9 +50,12 @@
             margin-left: 20px
             @include w1200-
                font-size: 30px
+            & span
       &__weight
          margin-top: 25px
          font-size: 18px
+         @media all and (max-width: 479px)
+            text-align: center
       &__part
          margin-top: 20px
          color: #bababa

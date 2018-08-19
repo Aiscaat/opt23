@@ -19,22 +19,19 @@ block content
                   {order: 29342556, date: '20.09.2017', price: {int: '1 243 834', penny: 55}}
                ]
             each item, key in historyItems
-               .history__item
-                  .history__item-head
-                     .history__item-col
-                        .history__item-order
+               .history-item
+                  .history-item__head
+                     .history-item__order
                            p Заказ №
                               br
                               = item.order
-                     .history__item-col
-                        p.history__item-date= item.date
-                     .history__item-col
-                        p.history__item-amount-text на сумму
-                     .history__item-col
-                        .history__item-amount
-                           +price(item.price.int, item.price.penny)
-                     .history__item-col
-                        button.history__item-show Показать
+                     .history-item__date
+                        p= item.date
+                     .history-item__amount-text
+                        p на сумму
+                     .history-item__amount
+                        +price(item.price.int, item.price.penny)
+                     button.history-item__btn Показать
                   -
                      var products = [
                         {src: 'assets/img/products/1.jpg', name: 'Гречневая крупа "Элитная" в/с 800гр/16пач. "Кубань-Матушка"', price: {q: 421, w: 96, e: '14 768', r: 60}},
@@ -59,8 +56,8 @@ block content
                         p.basket-statistics__part Для повторной покупки товаров нажмите кнопку «Добавить в корзину»и перейдите в корзину для оформления заказа.
                         .basket-statistics__controls
                            button.basket-statistics__checkout Добавть в корзину
-      .profile#profile
-         form.form#profileData
+      .profile#profile(style="display: none")
+         form.form#profileForm
             label.form__group
                input(type="text" value="Иванов Иван").form__input
             label.form__group

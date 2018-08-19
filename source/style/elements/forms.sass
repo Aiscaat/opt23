@@ -2,18 +2,27 @@
    padding-left: 30px
    padding-right: 30px
    font-size: 18px
-   &#profile
+   &#profileForm
       max-width: 456px
       width: 100%
       margin: 0 auto
+      @media all and (max-width: 459px)
+         font-size: 14px
       .form
          &__group
             margin-top: 30px
+            @media all and (max-width: 459px)
+               margin-top: 10px
          &__controls
             justify-content: flex-end
             margin-top: 50px
+            @media all and (max-width: 459px)
+               margin-top: 30px
+               justify-content: center
          &__submit
             width: 236px
+            @media all and (max-width: 459px)
+               height: 40px
    &#pass-rec
       max-width: 456px
       width: 100%
