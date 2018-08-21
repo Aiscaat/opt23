@@ -1,8 +1,13 @@
 .about-company
    &__wrap
-      @media all and (min-width: 1024px)
-         display: flex
-         align-items: flex-start
+      &:not(.-index)
+         @include w1200-
+            padding-left: 0 !important
+            padding-right: 0 !important
+      &.-index
+         @media all and (min-width: 1024px)
+            display: flex
+            align-items: flex-start
    &__photo
       min-width: 100%
       height: auto
@@ -23,7 +28,6 @@
          @include w1024-
             max-width: 100%
             height: 280px
-            margin-bottom: 20px
             margin-left: 0
    &__info
       &.-index
@@ -36,6 +40,7 @@
             font-size: 12px
          @include w1024-
             max-width: 100%
+            margin-top: 20px
          @include w540
             background-color: $white
             padding: 20px
@@ -47,34 +52,51 @@
       &:not(.-index)
          font-size: 18px
          background-color: $white
-         padding: 30px 8.571428571428571vw 30px 20px
+         padding: 30px 8.68% 30px 20px
+         margin-top: 10px
+         @include w1024-
+            font-size: 16px
+         @include w540
+            font-size: 15px
          & > p
-            line-height: 1.53
+            line-height: 1.56
             margin-bottom: 30px
+            @include w540
+               line-height: 1.67
          & > b
             margin-bottom: 30px
             font-size: 24px
             display: block
+            @include w540
+               margin-bottom: 20px
    &__slider
-      height: 39.285714285714285vw
-      margin-bottom: 10px
-      border: 1px solid red
       position: relative
       & > .slider__control-btn
          top: 50%
          opacity: 0.55
          &.-prev
             transform: translate(-50%, -50%)
+            @include w1200-
+               transform: translate(-0%, -50%)
          &.-next
             transform: translate(50%, -50%)
+            @include w1200-
+               transform: translate(0%, -50%)
       &-wrap
          display: flex
          overflow: hidden
-         height: inherit
+         @include w540
+            flex-direction: column
       &-container
-         height: inherit
+         height: 39.285714285714285vw
+         max-height: 550px
+         @include w1024-
+            height: 45.57291666666667vw
+         @media all and (max-width: 439px)
+            height: 200px
          display: flex
       &-item
          max-width: 1400px
          width: 100%
+         max-height: 550px
          height: 100%

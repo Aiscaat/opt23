@@ -5,14 +5,12 @@ block variables
 block content
    +breadcrumbs('Главная', 'Вакансии')
    h2.title.-page Вакансии
-   .vacancies__list
+   .vacancies__list.container-npad
       each item in [1, 2, 3, 4, 5]
          .vacancies__item
             .vacancies__item-name
                p Бухгалтер
             .vacancies__item-demands
                p Ведение бухгалтерского учета материалов и готовой продукции в общепите, проведение контрольных инвентаризаций 1 раз в месяц. Ведение бухгалтерского учета расчетов...
-                  br
-                  | Знание программ 1С Бухгалтерия, 1С Зарплата и кадры версия 3.
-            .vacancies__item-more
-               a(href="/vacancy.html").vacancies__item-link Подробнее
+               p Знание программ 1С Бухгалтерия, 1С Зарплата и кадры версия 3.
+            a(href="/vacancy.html").vacancies__item-link Подробнее

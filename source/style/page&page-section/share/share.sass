@@ -1,8 +1,9 @@
 .share
    &__image
       position: absolute
+      left: 50%
       top: 50%
-      transform: translateY(-50%)
+      transform: translate(-50%, -50%)
       min-width: 100%
       width: auto
       min-height: 100%
@@ -11,6 +12,10 @@
          overflow: hidden
          position: relative
          margin-bottom: 10px
+         @include w1366-
+            height: 400px
+         @include w768-
+            height: 300px
    &__content
       background-color: $white
       padding: 20px 20px 45px
@@ -23,3 +28,5 @@
          line-height: 1.56
          margin-bottom: 10px
          font-size: 18px
+         @include w540
+            font-size: 16px

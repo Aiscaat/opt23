@@ -5,7 +5,7 @@ block variables
 block content
    +breadcrumbs('Главная', 'Акции')
    h2.title.-page Акции
-   .container
+   .container-npad
       .shares__list
          .shares__list-wrap
             -
@@ -16,10 +16,9 @@ block content
                   {title: 'Мука', desc: 'При покупке 1 любой упаковки муки «Кубань-Матушка»получи 2 муки в подарок'}
                ]
             each item, key in shares
-               a(href="").shares__item
+               a(href="/share.html").shares__item
                   .shares__item-image-box
                      img(src="assets/img/shares/"+(key+1)+".jpg", alt="").shares__item-image
                   .shares__item-content
                      strong.shares__item-title= item.title
                      p.shares__item-desc= item.desc
-         +content-control()

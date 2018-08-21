@@ -5,9 +5,10 @@ block variables
 block content
    +breadcrumbs('Главная', 'Контакты')
    h2.title.-page Контакты
-   .container
+   .container-npad
       .contacts__wrap
          .logo.-contacts
+            img(src="assets/img/logo.png", alt="logo").logo__image
             p.logo__text
                span ЮГ
                | ОПТТОРГ-23
@@ -49,4 +50,4 @@ block content
                      td: p 8 (861) 
                         b 232-18-51
    .map
-      //- iframe(src="https://yandex.ua/map-widget/v1/-/CBuSnVch3A" allowfullscreen="true")
+      iframe(src="https://yandex.ua/map-widget/v1/-/CBuSnVch3A" allowfullscreen="true")

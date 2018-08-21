@@ -5,7 +5,7 @@ block variables
 block content
    +breadcrumbs('Главная', 'Каталог', 'Крупы и бобовые')
    h2.title.-page Каталог
-   .container.catalog__grid
+   .catalog__grid.container-npad
       .catalog__grid-wrap
          .catalog__grid-head
             ul.catalog-filter__tag-list
@@ -66,7 +66,7 @@ block content
                      .filter__input-group
                         input(type="text" value='0.5').filter__input
                         input(type="text" value='5').filter__input
-                     input(type="range").filter__range
+                     .filter__range
                -
                   var filters = [
                      {
@@ -104,9 +104,16 @@ block content
                               //- make for == id, id == value
                               //- id mast be unique
                               label(for="value"+key1+key2+"").filter__option= option
+               .filter__item.-share
+                  .filter__item-body.-check
+                     .filter__item-group
+                        input(type="checkbox" id="mobile-share" value="mobile-share").filter__checkbox
+                        label(for="mobile-share").filter__option Товарвы по акциям
                .filter__item
-                  button.filter__btn.-submit Применить
-                  button.filter__btn.-reset Сбросить фильтр
+                  p.filter__result Найдено 300  товаров
+                  .filter__controls
+                     button.filter__btn.-submit Применить
+                     button.filter__btn.-reset Сбросить фильтр
          .catalog__grid-main
             -
                var products = [

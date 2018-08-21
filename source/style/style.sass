@@ -81,9 +81,11 @@ body
 	@include w1200-
 		padding-right: 10px
 		padding-left: 10px
-	&.-prod-card
-		@include w540-
-			padding: 0
+	&-npad
+		@extend .container
+		@include w540
+			padding-left: 0
+			padding-right: 0
 
 main.main
 	flex: 1

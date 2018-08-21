@@ -24,7 +24,33 @@ window.addEventListener('load', () => {
                   navigation: {
                      nextEl: '.content-control__btn.-next',
                      prevEl: '.content-control__btn.-prev',
-                  },
+                  }
+               }
+            },
+            pagination: {
+               el: '.content-control__counter',
+               type: 'fraction'
+            }
+         }
+      }
+   });
+   if ($.querySelector('.about-company__slider')) swiper({
+      elem: {
+         selector: '.about-company__slider-wrap',
+         settings: {
+            wrapperClass: "about-company__slider-container",
+            slideClass: "about-company__slider-item",
+            slidesPerView: 1,
+            navigation: {
+               nextEl: '.slider__control-btn.-next',
+               prevEl: '.slider__control-btn.-prev',
+            },
+            breakpoints: {
+               540: {
+                  navigation: {
+                     nextEl: '.content-control__btn.-next',
+                     prevEl: '.content-control__btn.-prev',
+                  }
                }
             },
             pagination: {
@@ -72,6 +98,14 @@ window.addEventListener('load', () => {
          }
       }
    });
+
+   $.querySelectorAll('.filter__item-name').forEach(item => {
+      item.onclick = () => {
+         item.parentElement.nextElementSibling.classList.toggle('-hidden');
+      }
+   });
+
+   if ($.querySelector('.filter__range')) filterSlider($.querySelector('.filter__range'));
 
    catalogSelect();
    
@@ -192,6 +226,17 @@ var swiper = (obj) => {
 
    _breakpointChecker();
    breakpoint.addListener(_breakpointChecker);
+};
+
+var filterSlider = (el) => {
+   noUiSlider.create(el, {
+      start: [0.5, 5],
+      connect: true,
+      range: {
+         'min': 0,
+         'max': 6
+      }
+   });
 };
 /* ————————————————— modules functions ————————————————— */
 

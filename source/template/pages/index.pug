@@ -25,7 +25,7 @@ block content
 		h2.title.-index Акции
 		.container
 			.shares__list
-				.shares__list-wrap
+				.shares__list-slider
 					-
 						var shares = [
 							{title: 'Томатная паста', desc: 'При покупке одной упаковки томатной пасты «ПАЯ» 400гр/12бан получи одну банку в подарок'},
@@ -34,7 +34,7 @@ block content
 							{title: 'Мука', desc: 'При покупке 1 любой упаковки муки «Кубань-Матушка»получи 2 муки в подарок'}
 						]
 					each item, key in shares
-						a(href="").shares__item
+						a(href="/share.html").shares__item
 							.shares__item-image-box
 								img(src="assets/img/shares/"+(key+1)+".jpg", alt="").shares__item-image
 							.shares__item-content
@@ -46,7 +46,7 @@ block content
 	+slider('Новинки')
 	.about-company.-index
 		h2.title.-index о компании
-		.about-company__wrap
+		.about-company__wrap.-index
 			.about-company__photo-box
 				img(src="assets/img/about-company-index.jpg", alt="").about-company__photo
 			.about-company__info.-index

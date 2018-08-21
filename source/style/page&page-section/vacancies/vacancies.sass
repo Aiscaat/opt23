@@ -6,19 +6,50 @@
       margin-bottom: 2px
       display: flex
       align-items: center
+      justify-content: space-between
       font-size: 18px
+      @include w1366-
+         font-size: 16px
+      @include w1024
+         padding: 30px 20px
+      @include w1024-
+         display: block
+         &:after
+            display: block
+            content: ''
+            clear: both
       &-name
          font-size: 24px
          max-width: 260px
          width: 100%
          margin-right: 45px
+         line-height: 1.3
+         word-break: break-all
+         @include w1366-
+            font-size: 20px
+            max-width: 180px
+         @include w1024-
+            margin-right: 0
+            margin-bottom: 20px
+            +Helvetica(bold)
       &-demands
-         max-width: 772px
+         margin-right: 14.5%
          width: 100%
          line-height: 1.2
-         margin-right: 45px
-      &-more
-         text-align: right
-         flex: 1
+         @include w1366-
+            line-height: 1.86
+         @include w1024
+            margin-right: 8%
+         @include w1024-
+            font-size: 14px
+            margin-right: 0
+         & > p
+            &:not(:first-child)
+               @include w1024-
+                  display: none
       &-link
+         display: block
          text-decoration: underline
+         @include w1024-
+            margin-top: 20px
+            float: right

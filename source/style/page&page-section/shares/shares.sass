@@ -1,7 +1,4 @@
 .shares
-   & > .container
-      @include w540
-         padding: 0
    &__list
       margin: 0 auto
       @include w1366-
@@ -10,7 +7,7 @@
          max-width: 495px
       @include w540
          overflow: hidden
-      &-wrap
+      &-slider
          display: flex
          flex-wrap: wrap
          margin: 0 -10px
@@ -19,6 +16,20 @@
          @include w540
             flex-wrap: nowrap
             margin: 0
+         & > .shares__item
+            @include w540
+               margin: 0
+      &-wrap
+         display: flex
+         flex-wrap: wrap
+         margin: 0 -10px
+         @include w1200-
+            margin: 0 -3.5px
+         @include w540
+            margin: 0
+         & > .shares__item
+            @include w540
+               margin: 0 0 10px
    &__item
       max-width: calc(100% / 2 - 20px)
       width: 100%
@@ -36,7 +47,6 @@
       @include w768-
          display: block
       @include w540
-         margin: 0
          min-width: 100%
          box-shadow: none
       &-image

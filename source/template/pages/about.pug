@@ -5,12 +5,13 @@ block variables
 block content
    +breadcrumbs('Главная', 'О компании')
    h2.title.-page О компании
-   .container
+   .about-company__wrap.container
       .about-company__slider
          .about-company__slider-wrap
             .about-company__slider-container
                img(src="assets/img/about-company.jpg", alt="").about-company__slider-item
                img(src="assets/img/about-company.jpg", alt="").about-company__slider-item
+            +content-control()
          button.slider__control-btn.-prev
          button.slider__control-btn.-next
       .about-company__info

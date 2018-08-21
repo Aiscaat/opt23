@@ -27,11 +27,25 @@
       max-width: 456px
       width: 100%
       margin: 0 auto
+      @media all and (max-width: 479px)
+         padding-left: 10px
+         padding-right: 10px
       .form
          &__controls
             justify-content: center
          &__submit
             padding: 0 25px
+         &__group
+            &-name
+               @media all and (max-width: 479px)
+                  font-size: 14px
+         &__input
+            @media all and (max-width: 479px)
+               font-size: 14px
+         &__submit
+            width: 236px
+            @media all and (max-width: 479px)
+               font-size: 14px            
    &#enter, &#rec-pass
       padding-top: 17px
       padding-bottom: 38px
@@ -87,7 +101,7 @@
          font-size: 14px
       &-name
          position: absolute
-         top: -5px
+         top: -7px
          transform: translateY(-100%)
    &__radio
       display: none

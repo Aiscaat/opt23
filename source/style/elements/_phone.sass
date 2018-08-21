@@ -1,11 +1,19 @@
 .phone
-   font-size: 24px
    &s
       & tr
+         &
+            font-size: 24px
+            @include w1024-
+               font-size: 18px
+            @media all and (max-width: 479px)
+               font-size: 16px
          & > td
             &:first-child
                & > p
                   margin-right: 20px
+                  font-size: 18px
+                  @include w1024-
+                     font-size: 16px
          &:not(:first-child):not(:last-child)
             & > td
                & > p
