@@ -50,6 +50,7 @@ html
 	width: 100%
 	height: auto
 	overflow-x: hidden
+	overflow-y: scroll
 	@include w1200-
 		font-size: 14px
 
@@ -70,6 +71,9 @@ body
 	&.is-home
 		@include w540
 			background-color: #f9f9f9
+	&.no-scroll
+		overflow: hidden
+		height: 100vh
 
 .container
 	margin-left: auto

@@ -16,6 +16,10 @@
          display: none
       &__link
          margin-right: 70px
+         &:hover
+            color: $green
+            border-bottom: 2px solid $green
+            padding-top: 2px
    &__foot
       padding: 15px 0
       background-color: $green
@@ -95,6 +99,8 @@
          padding-right: 20px
          @include w1024-
             min-width: 188px
+         &:hover
+            background-color: $yellow-hover
          &:before
             content: ''
             display: block
@@ -163,5 +169,12 @@
          align-items: center
          @include w1200-
             margin-left: 0
+         &:hover
+            & > span
+               color: $white
+               border-bottom: 2px solid $white
+               padding-top: 2px
+            & > svg
+               fill: $white
          & svg
             fill: $green-light

@@ -34,7 +34,6 @@
     "node-sass": "^4.9.2"
   },
   "dependencies": {
-    "nouislider": "^11.1.0",
-    "npm": "^6.4.0"
+    "nouislider": "^11.1.0"
   }
 }

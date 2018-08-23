@@ -29,6 +29,11 @@
          @include w768-
             display: none
             max-width: 100%
+            position: fixed
+            top: 0
+            left: 0
+            z-index: 100
+            background-color: #f9f9f9
       &-head
       &-foot
          width: 100%
@@ -53,6 +58,9 @@
          @include w1200-
             margin-left: 10px
             margin-bottom: 10px
+         &:hover
+            text-decoration: underline
+            cursor: context-menu
          &-list
             padding: 30px 32px 10px 12px
             background-color: $white
@@ -289,7 +297,7 @@
       max-width: 1286px
       font-size: 18px
       line-height: 1.56
-      margin-top: 20px
+      margin-top: 30px
       padding: 25px 20px 32px
       background-color: $white
       @include w1024-
@@ -311,6 +319,9 @@
    height: 70px
    font-size: 24px
    background-color: $white
+   box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.08)
+   &:hover
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.18)
    @include w1024-
       margin-top: 20px
       padding-left: 0

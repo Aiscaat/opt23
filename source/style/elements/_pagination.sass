@@ -1,7 +1,7 @@
 .pagination
    display: flex
    font-size: 18px
-   margin-top: 10px
+   margin-top: 20px
    justify-content: center
    @include w1024-
       margin-top: 20px
@@ -22,27 +22,27 @@
          display: flex
          width: 100%
          height: 100%
+      & > a
+         &:hover
+            text-decoration: underline
       &.-first
       &.-last
-      &.-prev
-         border: 1px solid #353b40
-         transform: rotate(90deg)
-         background:
-            repeat: no-repeat
-            image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDkwLjY1MSA0OTAuNjUxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNjUxIDQ5MC42NTE7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoNi4xMjMyM2UtMTcgMSAtMSA2LjEyMzIzZS0xNyA0OTAuNjUxIC0yLjg0MjE3ZS0xNCkiPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM3MC4yLDIzNy43ODdMMTM1LjUzMywzLjEyYy00LjE2LTQuMTYtMTAuOTIzLTQuMTYtMTUuMDgzLDBjLTQuMTYsNC4xNi00LjE2LDEwLjkyMywwLDE1LjA4M2wyMjcuMTM2LDIyNy4xMTUgICAgTDEyMC40NTEsNDcyLjQ1M2MtNC4xNiw0LjE2LTQuMTYsMTAuOTIzLDAsMTUuMDgzYzIuMDkxLDIuMDY5LDQuODIxLDMuMTE1LDcuNTUyLDMuMTE1czUuNDYxLTEuMDQ1LDcuNTMxLTMuMTE1TDM3MC4yLDI1Mi44NjkgICAgQzM3NC4zNiwyNDguNzA5LDM3NC4zNiwyNDEuOTQ3LDM3MC4yLDIzNy43ODd6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMzNTNCNDAiIGRhdGEtb2xkX2NvbG9yPSIjMzUzYjQwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==)
-            size: 25px 25px
-            position: center
-         @media all and (max-width: 479px)
-            background-size: 15px 15px
+      &.-prev,
       &.-next
          border: 1px solid #353b40
-         transform: rotate(-90deg)
          background:
             repeat: no-repeat
             image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDkwLjY1MSA0OTAuNjUxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTAuNjUxIDQ5MC42NTE7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoNi4xMjMyM2UtMTcgMSAtMSA2LjEyMzIzZS0xNyA0OTAuNjUxIC0yLjg0MjE3ZS0xNCkiPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM3MC4yLDIzNy43ODdMMTM1LjUzMywzLjEyYy00LjE2LTQuMTYtMTAuOTIzLTQuMTYtMTUuMDgzLDBjLTQuMTYsNC4xNi00LjE2LDEwLjkyMywwLDE1LjA4M2wyMjcuMTM2LDIyNy4xMTUgICAgTDEyMC40NTEsNDcyLjQ1M2MtNC4xNiw0LjE2LTQuMTYsMTAuOTIzLDAsMTUuMDgzYzIuMDkxLDIuMDY5LDQuODIxLDMuMTE1LDcuNTUyLDMuMTE1czUuNDYxLTEuMDQ1LDcuNTMxLTMuMTE1TDM3MC4yLDI1Mi44NjkgICAgQzM3NC4zNiwyNDguNzA5LDM3NC4zNiwyNDEuOTQ3LDM3MC4yLDIzNy43ODd6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMzNTNCNDAiIGRhdGEtb2xkX2NvbG9yPSIjMzUzYjQwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==)
             size: 25px 25px
             position: center
+         &:hover
+            border-color: $green-light
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMS45NDkgNTExLjk0OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTExLjk0OSA1MTEuOTQ5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnIHRyYW5zZm9ybT0ibWF0cml4KDYuMTIzMjNlLTE3IDEgLTEgNi4xMjMyM2UtMTcgNTExLjk0OSAtMi44NDIxN2UtMTQpIj48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zODYuMjM1LDI0OC4zMDhMMTQwLjkwMiwyLjk3NWMtNC4yNjctNC4wNTMtMTAuOTg3LTMuOTQ3LTE1LjA0LDAuMjEzYy0zLjk0Nyw0LjE2LTMuOTQ3LDEwLjY2NywwLDE0LjgyN2wyMzcuNzYsMjM3Ljc2ICAgIGwtMjM3Ljc2LDIzNy44NjdjLTQuMjY3LDQuMDUzLTQuMzczLDEwLjg4LTAuMjEzLDE1LjA0YzQuMDUzLDQuMjY3LDEwLjg4LDQuMzczLDE1LjA0LDAuMjEzYzAuMTA3LTAuMTA3LDAuMjEzLTAuMjEzLDAuMjEzLTAuMjEzICAgIGwyNDUuMzMzLTI0NS4zMzNDMzkwLjM5NSwyNTkuMTg4LDM5MC4zOTUsMjUyLjQ2OCwzODYuMjM1LDI0OC4zMDh6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiM4MEJCNDEiIGRhdGEtb2xkX2NvbG9yPSIjODBiYjQxIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==)
          @media all and (max-width: 479px)
             background-size: 15px 15px
+      &.-prev
+         transform: rotate(90deg)
+      &.-next
+         transform: rotate(-90deg)
       &.-active
          background-color: $yellow

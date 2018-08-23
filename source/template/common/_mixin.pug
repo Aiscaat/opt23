@@ -62,8 +62,9 @@ mixin product(imgSrc, name, price1Int, price1Penni, price2Int, price2Penni)
 						.product__price
 							+price(price2Int, price2Penni)
 						p.product__price-per За 1 упаковку
-
-				a(href="").product__link Подробнее
+				//- если товар в корзине то добавлять кнопке класс "-in-basket"
+				a(href="/product-card.html").product__link Подробнее
+		button.product__quick-view
 
 mixin product-basket(imgSrc, name, price1Int, price1Penni, price2Int, price2Penni, history)
 	.product-basket
