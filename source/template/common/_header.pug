@@ -29,19 +29,22 @@ block header
 					.header-search__result-box
 						-
 							var searchResult = [
-								'для суши (рапан) 25кг.',
-								'Бальдо "Премиум"  25кг',
-								'Осман "Премиум"  25кг',
-								'1/с 25кг промасленный Щедрая Кубань',
-								'1/с 25кг Агрокомплекс ТУ',
-								'1/с 25кг Бальдо Прикубанский  ГОСТ',
-								'1/с 25кг Брют ТУ',
-								'1/с 25кг Львовский ГОСТ',
-								'1/с 25кг Львовское ТУ'
+								' для суши (рапан) 25кг.',
+								' Бальдо "Премиум"  25кг',
+								' Осман "Премиум"  25кг',
+								' 1/с 25кг промасленный Щедрая Кубань',
+								' 1/с 25кг Агрокомплекс ТУ',
+								' 1/с 25кг Бальдо Прикубанский  ГОСТ',
+								' 1/с 25кг Брют ТУ',
+								' 1/с 25кг Львовский ГОСТ',
+								' 1/с 25кг Львовское ТУ'
 							]
+						//- текст которій находится НЕ в теге "b"
+						//- должен начинаться с пробела
+						//- а в теге заканчиваться без пробела
 						each item in searchResult
 							a(href="").header-search__result
-								b Рис 
+								b Рис
 								= item
 				.header__links
 					a(href="").enter-link
@@ -52,17 +55,87 @@ block header
 						span Корзина
 						b.basket-count 50
 			.header__content-mobile
-				button.header-catalog__btn-alt
+				.header-menu
+					button.header-menu__btn
+					.header-popup
+						+green-head('Меню')
+						.header-popup__content
+							-
+								var menu = [
+									{title: 'Услуги', href: '/services.html'},
+									{title: 'Акции', href: '/shares.html'},
+									{title: 'О компани', href: '/about.html'},
+									{title: 'Контакты', href: '/contacts.html'},
+									{title: 'Вакансии', href: '/vacancies.html'}
+								]
+							.header-menu__list
+								a(href='@catalog').header-menu__link Каталог
+								each item in menu
+									a(href= item.href).header-menu__link= item.title
+							.header-menu__foot
+								a(href="/").logo
+									img(src="assets/img/logo.png", alt="logo").logo__image
+									p.logo__text
+										span ЮГ
+										| ОПТТОРГ-23
+								ul.header-menu__phone-list
+									li.header-menu__phone 8 (861) 
+										b 236-08-55
+									li.header-menu__phone 8 (861) 
+										b 260-50-47
+									li.header-menu__phone 8 (861) 
+										b 260-32-37
+									li.header-menu__phone 8 (861) 
+										b 232-18-51
+								.footer-social.-menu
+									.footer-social__list
+										-
+											var socialLinks = [
+												{href: '#', svg: 'vk'},
+												{href: '#', svg: 'ok'},
+												{href: '#', svg: 'inst'}
+											]
+										each item in socialLinks
+											a(href= item.href).footer-social__link
+												+svg-mix(item.svg)
 				a(href="").enter-link
 					+svg-mix('avatar', 'enter-link__icon')
 				a(href="/").logo
 					img(src="assets/img/logo.png", alt="logo").logo__image
-				button.mobile-search__btn
+				.mobile-search
+					button.mobile-search__btn
+					.header-popup
+						+green-head('Поиск')
+						.header-popup__content
+							form(action="").mobile-search__form
+								input(type="text" placeholder="Введите название товара или бренд").mobile-search__input
+								i.search-icon
+							.header-search__result-box
+								-
+									var searchResult = [
+										' для суши (рапан) 25кг.',
+										' Бальдо "Премиум"  25кг',
+										' Осман "Премиум"  25кг',
+										' 1/с 25кг промасленный Щедрая Кубань',
+										' 1/с 25кг Агрокомплекс ТУ',
+										' 1/с 25кг Бальдо Прикубанский  ГОСТ',
+										' 1/с 25кг Брют ТУ',
+										' 1/с 25кг Львовский ГОСТ',
+										' 1/с 25кг Львовское ТУ'
+									]
+								//- текст которій находится НЕ в теге "b"
+								//- должен начинаться с пробела
+								//- а в теге заканчиваться без пробела
+								each item in searchResult
+									a(href="").header-search__result
+										b Рис
+										= item
 				a(href="/basket.html").basket-link
 					+svg-mix('shopping-basket', 'basket-link__icon')
 					b.basket-count 50
 			.header-catalog
 				+close-btn('-header-catalog')
+				+green-head('Каталог')
 				.header-catalog__wrap
 					-
 						var headerCatalog = [
@@ -141,7 +214,7 @@ block header
 						]
 					each div in headerCatalog
 						.header-catalog__div
-							b.header-catalog__div-name= div.title
+							a.header-catalog__div-name= div.title
 							.header-catalog__div-list
 								each link in div.list
 									a(href="").header-catalog__div-link= link

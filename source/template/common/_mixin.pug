@@ -165,6 +165,16 @@ mixin slider(title)
 			button.slider__control-btn.-prev
 			button.slider__control-btn.-next
 			+content-control()
+		.quick-view
+			.quick-view__wrap
+				+close-btn('-quick-view')
+				.quick-view__wrap-inner
+					+product-info('-view')
+
+mixin green-head(text, btnClass, mod)
+	.head-mobile(class= mod ? mod : '')
+		= text
+		button.close(class= btnClass)
 
 mixin content-control()
 	.content-control

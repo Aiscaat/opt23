@@ -15,15 +15,13 @@ block content
 		h2.title.-index cобственное производство
 		.container
 			.manufacture__list
-				each item in [1, 3]
+				each item in [1, 2]
 					.manufacture__item
 						.manufacture__item-photo-box
-							img(src="assets/img/manufacture/"+(item)+".png", alt="").manufacture__item-photo
-						.manufacture__item-photo-box
-							img(src="assets/img/manufacture/"+(item+1)+".png", alt="").manufacture__item-photo
+							img(src="assets/img/manufacture/"+(item)+".jpg", alt="").manufacture__item-photo
 	.shares
 		h2.title.-index Акции
-		.container
+		.container-npad
 			.shares__list
 				.shares__list-slider
 					-

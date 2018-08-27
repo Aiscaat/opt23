@@ -43,6 +43,52 @@
          & .logo__image
             width: 40px
             height: 40px
+   &-popup
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 10000
+      background-color: $white
+      display: none
+      &__content
+         overflow-y: auto
+         height: 100%
+         padding-bottom: 30px
+   &-menu
+      &__list
+         padding: 0 20px
+      &__link
+         display: block
+         width: max-content
+         font-size: 16px
+         margin-top: 20px
+      &__foot
+         margin: 40px auto 0
+         max-width: 260px
+         width: 100%
+         & > .logo
+            justify-content: center
+            & > .logo__image
+               width: 50px
+               height: 50px
+      &__phone
+         width: 50%
+         font-size: 14px
+         margin-bottom: 15px
+         text-align: center
+         &-list
+            display: flex
+            flex-wrap: wrap
+            margin-top: 30px
+      &__btn
+         width: 22px
+         height: 22px
+         background:
+            repeat: no-repeat
+            image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyMjQgMjI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyMjQgMjI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCI+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTU2Mi4zNikiPgoJPGc+CgkJPGc+CgkJCTxwYXRoIGQ9Ik0xMy4zNSw1OTAuMTY2aDE5Ny4zYzE3LjgsMC41LDE3LjgtMjguMjk5LDAtMjcuNzk5SDEzLjM1Qy00LjQ1LDU2MS44NjYtNC40NSw1OTAuNjY2LDEzLjM1LDU5MC4xNjZ6IiBmaWxsPSIjNGViNjAwIi8+CgkJCTxwYXRoIGQ9Ik0yMTAuNjUsNjYwLjQ2NEgxMy4zNWMtMTcuOC0wLjUtMTcuOCwyOC4yOTksMCwyNy43OTloMTk3LjNDMjI4LjQ1LDY4OC43NjMsMjI4LjQ1LDY1OS45NjQsMjEwLjY1LDY2MC40NjR6IiBmaWxsPSIjNGViNjAwIi8+CgkJCTxwYXRoIGQ9Ik0yMTAuNjUsNzU4LjA2MUgxMy4zNWMtMTcuOCwwLTE3LjgsMjguMjk5LDAsMjguMjk5aDE5Ny4zQzIyOC40NSw3ODYuMzYsMjI4LjQ1LDc1OC4wNjEsMjEwLjY1LDc1OC4wNjF6IiBmaWxsPSIjNGViNjAwIi8+CgkJPC9nPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=)
+            size: cover
    &-catalog
       position: absolute
       top: 100%
@@ -55,6 +101,23 @@
          padding-left: 20px
       @include w1024-
          padding-left: 10px
+      @include w768-
+         // display: block
+         position: fixed
+         top: 0
+         left: 0
+         right: 0
+         bottom: 0
+         padding: 0
+      & > .head-mobile
+         display: none
+         @include w768-
+            display: flex
+      & > button.close
+         top: 10px
+         right: 10px
+         @include w768-
+            display: none
       &.-padding
          padding-right: 14.5px
       &__wrap
@@ -63,6 +126,12 @@
          padding-right: 30px
          overflow-x: auto
          height: calc(100vh - 200px)
+         @include w768-
+            height: calc(100vh - 50px)
+            display: block
+            padding: 30px 20px 10px
+         @include w540-
+            height: calc(100vh - 40px)
       &__div
          max-width: 25%
          width: 100%
@@ -72,17 +141,27 @@
             max-width: calc(100% / 3)
          @include w1024-
             padding-right: 25px
+         @include w768-
+            margin-bottom: 0
+            max-width: none
+            padding-right: 0
          &-name
             font-size: 18px
             margin-bottom: 20px
             display: block
+            +Helvetica(bold)
             @include w1024-
                font-size: 16px
+            @include w768-
+               +Helvetica()
+               display: inline-block
          &-list
             @include w1200-
                font-size: 16px
             @include w1024-
                font-size: 14px
+            @include w768-
+               display: none
          &-link
             display: block
             line-height: 1.63
@@ -111,15 +190,6 @@
                repeat: no-repeat
                image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQyNCA0MjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNCA0MjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzUsODlDMTUsODksMCw3NCwwLDU0czE1LTM2LDM1LTM2aDM1M2MyMCwwLDM2LDE2LDM2LDM2cy0xNiwzNS0zNiwzNUgzNXoiIGZpbGw9IiMwMDAwMDAiLz4KCQk8cGF0aCBkPSJNMzg4LDE3NmMyMCwwLDM2LDE2LDM2LDM2cy0xNiwzNS0zNiwzNUgzNWMtMjAsMC0zNS0xNS0zNS0zNXMxNS0zNiwzNS0zNkgzODh6IiBmaWxsPSIjMDAwMDAwIi8+CgkJPHBhdGggZD0iTTM4OCwzMzVjMjAsMCwzNiwxNSwzNiwzNXMtMTYsMzYtMzYsMzZIMzVjLTIwLDAtMzUtMTYtMzUtMzZzMTUtMzUsMzUtMzVIMzg4eiIgZmlsbD0iIzAwMDAwMCIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=)
                size: cover
-         &-alt
-            content: ''
-            display: block
-            width: 22px
-            height: 22px
-            background:
-               repeat: no-repeat
-               image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyMjQgMjI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyMjQgMjI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCI+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTU2Mi4zNikiPgoJPGc+CgkJPGc+CgkJCTxwYXRoIGQ9Ik0xMy4zNSw1OTAuMTY2aDE5Ny4zYzE3LjgsMC41LDE3LjgtMjguMjk5LDAtMjcuNzk5SDEzLjM1Qy00LjQ1LDU2MS44NjYtNC40NSw1OTAuNjY2LDEzLjM1LDU5MC4xNjZ6IiBmaWxsPSIjNGViNjAwIi8+CgkJCTxwYXRoIGQ9Ik0yMTAuNjUsNjYwLjQ2NEgxMy4zNWMtMTcuOC0wLjUtMTcuOCwyOC4yOTksMCwyNy43OTloMTk3LjNDMjI4LjQ1LDY4OC43NjMsMjI4LjQ1LDY1OS45NjQsMjEwLjY1LDY2MC40NjR6IiBmaWxsPSIjNGViNjAwIi8+CgkJCTxwYXRoIGQ9Ik0yMTAuNjUsNzU4LjA2MUgxMy4zNWMtMTcuOCwwLTE3LjgsMjguMjk5LDAsMjguMjk5aDE5Ny4zQzIyOC40NSw3ODYuMzYsMjI4LjQ1LDc1OC4wNjEsMjEwLjY1LDc1OC4wNjF6IiBmaWxsPSIjNGViNjAwIi8+CgkJPC9nPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=)
-               size: cover
    &-search
       margin: 0 15px
       position: relative
@@ -140,8 +210,10 @@
          line-height: 2
          display: block
          width: max-content
+         max-width: 100%
          & > b
             background-color: $yellow
+            padding: 2px 5px
          &-box
             background-color: $white
             border-top: 1px solid $green

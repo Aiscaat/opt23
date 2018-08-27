@@ -1,23 +1,24 @@
 block footer
 	footer.footer
-		.footer-info
-			b.footer-info__name ЮГОПТТОРГ-23
-			.footer-info__desc
-				b Крупнейшая оптовая база продуктов 
-				span в южном федеральном округе
-			.footer-social.-copy
-				.footer-social__list
-					-
-						var socialLinks = [
-							{href: '#', svg: 'vk'},
-							{href: '#', svg: 'ok'},
-							{href: '#', svg: 'inst'}
-						]
-					each item in socialLinks
-						a(href= item.href).footer-social__link
-							+svg-mix(item.svg)
 		.footer__head
-			.footer-nav__list
+			.footer-info
+				.footer-info__wrap
+					b.footer-info__name ЮГОПТТОРГ-23
+					.footer-info__desc
+						b Крупнейшая оптовая база продуктов 
+						span в южном федеральном округе
+				.footer-social.-copy
+					.footer-social__list
+						-
+							var socialLinks = [
+								{href: '#', svg: 'vk'},
+								{href: '#', svg: 'ok'},
+								{href: '#', svg: 'inst'}
+							]
+						each item in socialLinks
+							a(href= item.href).footer-social__link
+								+svg-mix(item.svg)
+			.footer-nav
 				-
 					var footerNavs = [
 						{
@@ -49,26 +50,28 @@ block footer
 						]}
 					]
 				each item in footerNavs
-					.footer-nav
+					.footer-nav__item
 						strong.footer-title= item.title
-						.footer-nav__wrap
+						.footer-nav__item-wrap
 							each link in item.list
-								a(href= link.href).footer-nav__link= link.title
-			a(href="").copyright Copyright ©  ООО «ЮГОПТТОРГ-23» 2015 - 2018
+								a(href= link.href).footer-nav__item-link= link.title
+		.footer-social
+			strong.footer-title Социальные сети
+			.footer-social__list
+				-
+					var socialLinks = [
+						{href: '#', svg: 'vk'},
+						{href: '#', svg: 'ok'},
+						{href: '#', svg: 'inst'}
+					]
+				each item in socialLinks
+					a(href= item.href).footer-social__link
+						+svg-mix(item.svg)
 		.footer__foot
-			.footer-social
-				strong.footer-title Социальные сети
-				.footer-social__list
-					-
-						var socialLinks = [
-							{href: '#', svg: 'vk'},
-							{href: '#', svg: 'ok'},
-							{href: '#', svg: 'inst'}
-						]
-					each item in socialLinks
-						a(href= item.href).footer-social__link
-							+svg-mix(item.svg)
+			a(href="").copyright Copyright ©  ООО «ЮГОПТТОРГ-23» 2015 - 2018
 			.developer
 				a(href="http://blaze.su/" target="_blank").developer__link
 					+svg-mix('Blaze', 'developer__logo')
-				span Разработка и продвижение
+				span Разработка
+					br
+					| и продвижение

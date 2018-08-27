@@ -4,21 +4,41 @@
    color: $white
    padding: 30px 18px 35px
    display: flex
+   flex-wrap: wrap
+   align-items: flex-start
    justify-content: space-between
    &__head
       display: flex
-      flex-direction: column
-      justify-content: space-between
+      flex: 1
+      @include w1024-
+         display: block
    &__foot
       display: flex
-      flex-direction: column
-      justify-content: space-between
+      align-items: flex-end
+      position: relative
+      width: 100%
+      margin-top: 35px
+      @include w1024-
+         flex-direction: column-reverse
+         align-items: center
    &-title
       font-size: 22px
       opacity: 0.4
       display: block
    &-info
       max-width: 200px
+      @include w1366-
+         margin-right: 55px
+      @include w1024-
+         max-width: none
+         display: flex
+         align-items: center
+         justify-content: space-between
+         margin-bottom: 30px
+      @include w768-
+         margin-right: 0
+         flex-direction: column
+         align-items: flex-start
       &__name
          text-transform: uppercase
          margin-bottom: 9px
@@ -26,29 +46,54 @@
          display: block
       &__desc
          line-height: 1.25
+         @include w1024-
+            & > *
+               display: block
          & > span
             opacity: 0.8
    &-nav
-      margin-right: 7.43vw
-      flex: 1
-      &:last-child
-         margin-right: 0
-      &__list
-         display: flex
-         max-width: 800px
+      display: flex
+      margin: 0 auto
+      max-width: 800px
+      width: 100%
+      @include w1366-
+         max-width: none
+         justify-content: space-around
+      @include w1200-
+         justify-content: space-between
+      @include w768-
+         flex-direction: column
+      &__item
+         flex: 1
+         padding-left: 35px
+         @include w1366-
+            flex: unset
+            padding-left: 0
+            padding-right: 35px
+            width: max-content
+            max-width: calc(100% / 3)
+         @include w768-
+            padding-right: 0
+            width: auto
+            max-width: none
+            margin-bottom: 50px
+         &:last-child
+            @include w768-
+               margin-bottom: 0
+         &-wrap
+         &-link
+            font-size: 18px
+            margin-top: 15px
+            display: block
+            max-width: max-content
+            line-height: 1.2
+            &:first-child
+               margin-top: 22px
+            &:hover
+               border-bottom: 1px solid $white
+               padding-bottom: 1px
       & > .footer-title
          margin-bottom: 22px
-      &__wrap
-      &__link
-         font-size: 18px
-         margin-top: 15px
-         display: block
-         max-width: max-content
-         &:first-child
-            margin-top: 0
-         &:hover
-            border-bottom: 1px solid $white
-            padding-bottom: 1px
    &-social
       & > .footer-title
          margin-bottom: 26px
@@ -62,7 +107,8 @@
          & > svg
             max-width: 100%
             max-width: 100%
-      &:not(.-copy)
+      &:not(.-copy),
+         width: 195px
          @include w1366-
             display: none
          .footer-social
@@ -71,26 +117,60 @@
          display: none
          @include w1366-
             display: block
+         @include w1024-
+            margin-top: 0
+         @include w768-
+            margin-top: 30px
+      &.-menu
+         display: flex
+         justify-content: center
+         margin-top: 55px
+         & .footer-social__link:last-child
+            margin-right: 0
 
 .copyright
    display: block
-   margin: 30px auto 0
+   margin: 0 auto
    font-size: 0.875rem
    letter-spacing: 0.2px
    opacity: 0.8
    width: max-content
-
+   @media all and (min-width: 1024px) and (max-width: 1365px)
+      padding-left: 10%
 
 .developer
-   max-width: 100px
-   margin-top: 30px
+   position: absolute
+   right: 0
+   bottom: 0
+   width: 195px
+   @include w1366-
+      position: unset
+      width: 21%
+      display: flex
+      align-items: flex-end
+      justify-content: flex-end
+      flex-direction: row-reverse
+   @include w1024-
+      margin-bottom: 20px
+      width: auto
+      align-items: center
+   @include w768-
+      margin-bottom: 30px
    &__link
       width: 100px
       height: 50px
       display: block
       margin-bottom: 8px
+      @include w1366-
+         margin-bottom: 0
+         margin-left: 10px
+         width: 70px
+         height: 40px
       & > svg
          max-width: 100%
          max-height: 100%
    & > span
       opacity: 0.6
+      line-height: 1.2
+      @include w1024-
+         font-size: 12px
